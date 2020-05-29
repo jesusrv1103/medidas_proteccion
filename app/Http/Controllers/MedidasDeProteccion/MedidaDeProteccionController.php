@@ -14,6 +14,7 @@ use App\Admin\Ocupacion;
 use App\Admin\Servicio;
 use App\Admin\Usuario;
 use Mail;
+use App\Mail\MedidaDeProteccionRecibida;
 use App\MedidasDeProteccion\Carpeta;
 use App\MedidasDeProteccion\Involucrado;
 Use App\MedidasDeProteccion\MedidaProteccion;
@@ -71,7 +72,7 @@ class MedidaDeProteccionController extends Controller
        //json_decode($request->input('municipio_carpeta'))->nombre;
 
      
-       Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($request));
+       Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
 
         
        return redirect()->back()->with('flash', 'Se ha recibido su predenuncia, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;
