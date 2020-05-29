@@ -17,45 +17,45 @@
         </tr>
         <tr>
             <td> Nombre: </td>
-            <td>{{json_decode($request->input('municipio_carpeta'))->nombre}} </td>
+            <td>{{$request->carpeta}} </td>
         </tr>
 
         <tr>
             <td>Causa Penal: </td>
-            <td> </td>
+            <td>{{$request->causaPenal}}  </td>
         </tr>
 
 
         <tr>
             <td>Municipio: </td>
-            <td> </td>
+            <td>{{json_decode($request->input('municipio_carpeta'))->nombre}}  </td>
         </tr>
 
 
         <tr>
             <td>Distritos: </td>
-            <td> </td>
+            <td>{{json_decode($request->input('distrito'))->nombre}}  </td>
         </tr>
 
         <tr>
             <td>Fecha: </td>
-            <td> </td>
+            <td>{{$request->fecha_carpeta}}  </td>
         </tr>
 
         <tr>
             <td>Solicitante: </td>
-            <td> </td>
+            <td>{{$request->solicitante}}  </td>
         </tr>
 
 
         <tr>
             <td>Fiscal: </td>
-            <td> </td>
+            <td>{{$request->fiscal}}  </td>
         </tr>
 
         <tr>
             <td>Tipo de Usuario: </td>
-            <td> </td>
+            <td>{{json_decode($request->input('usuario'))->nombre}} </td>
         </tr>
        
     </table>
@@ -68,54 +68,54 @@
         </tr>
         <tr>
             <td> Nombre: </td>
-            <td></td>
+            <td>{{$request->nombre_involucrado}}</td>
         </tr>
 
 
         <tr>
             <td> Edad: </td>
-            <td></td>
+            <td>{{$request->edad}} </td>
         </tr>
 
         <tr>
             <td> Nacionalidad: </td>
-            <td></td>
+            <td>{{json_decode($request->input('nacionalidad'))->nombre}} </td>
         </tr>
 
 
         <tr>
             <td> Ocupacion: </td>
-            <td></td>
+            <td>{{json_decode($request->input('ocupacion'))->nombre}} </td>
         </tr>
 
         <tr>
             <td>Telefono: </td>
-            <td></td>
+            <td>{{$request->telefono}}</td>
         </tr>
 
         <tr>
             <td>Telefono Persona de confianza: </td>
-            <td></td>
+            <td>{{$request->telefono_confianza}}</td>
         </tr>
 
         <tr>
             <td>Correo electrónico: </td>
-            <td></td>
+            <td>{{$request->correo_involucrado}}</td>
         </tr>
 
         <tr>
             <td>Delito: </td>
-            <td></td>
+            <td>{{json_decode($request->input('delito'))->nombre}} </td>
         </tr>
 
         <tr>
             <td>Area del servicio que solicita: </td>
-            <td></td>
+            <td>{{json_decode($request->input('area'))->nombre}} </td>
         </tr>
 
         <tr>
             <td>Servicio que solicita: </td>
-            <td></td>
+            <td>{{json_decode($request->input('servicio '))->nombre}} </td>
         </tr>
         
         

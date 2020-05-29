@@ -69,13 +69,15 @@ class MedidaDeProteccionController extends Controller
       
 
        //json_decode($request->input('municipio_carpeta'))->nombre;
-
+       
      
        Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($request));
 
         
        return redirect()->back()->with('flash', 'Se ha recibido su predenuncia, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;
-       return view('correos.medida_proteccion',compact('request'));
+      
+       
+      return $request;
     }
 
     /**
