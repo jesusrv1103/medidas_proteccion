@@ -43,6 +43,12 @@
         </tr>
 
         <tr>
+            <td>Hora: </td>
+            <td>{{$request->hora}}  </td>
+        </tr>
+
+
+        <tr>
             <td>Solicitante: </td>
             <td>{{$request->solicitante}}  </td>
         </tr>
