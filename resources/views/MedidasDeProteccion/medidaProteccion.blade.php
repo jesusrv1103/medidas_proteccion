@@ -23,7 +23,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <!--end::Base Path -->
     <meta charset="utf-8" />
-    <title>PREDENUNCIA | FGJEZ</title>
+    <title>SISTEMA DE MEDIDAS DE PROTECCION | FGJEZ</title>
     <meta name="description" content="Latest updates and statistic charts">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -236,7 +236,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="kt-portlet__head">
                                         <div class="kt-portlet__head-label">
                                             <h3 class="kt-portlet__head-title">
-                                                Rellenar Formulario Medidas de Proteccion
+                                                Sistema de Medidas de Proteccion
                                             </h3>
                                         </div>
                                     </div>
@@ -264,10 +264,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                             <div class="form-group row">
                                                 <label for="example-text-input"
-                                                    class="col-2 col-form-label">Carpeta de Investigación: <span style="color:red;">*</span></label>
+                                                    class="col-2 col-form-label">Carpeta de Investigación: </label>
                                                 <div class="col-10">
 
-                                                    <input type="text" class="form-control" onchange="mayus(this);" name="carpeta" required
+                                                    <input type="text" class="form-control" onchange="mayus(this);" name="carpeta" 
                                                          id="nombre_id" >
                                                     <span class="form-text text-muted">Por favor ingrese numero de carpeta.</span>
                                                 </div>
@@ -275,10 +275,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                             <div class="form-group row">
                                                 <label for="example-text-input"
-                                                    class="col-2 col-form-label">Causa Penal: <span style="color:red;">*</span></label>
+                                                    class="col-2 col-form-label">Causa Penal: </label>
                                                 <div class="col-10">
 
-                                                    <input type="text" class="form-control" onchange="mayus(this);" name="causaPenal" required
+                                                    <input type="text" class="form-control" onchange="mayus(this);" name="causaPenal" 
                                                          id="nombre_id" >
                                                     <span class="form-text text-muted">Por favor ingrese Causa Penal.</span>
                                                 </div>
@@ -330,9 +330,9 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                                             <div class="form-group row">
-                                                <label for="example-time-input" class="col-2 col-form-label">Hora</label>
+                                                <label for="example-time-input" class="col-2 col-form-label">Hora <span style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                    <input class="form-control" name="hora" type="time" value="00:00:00" id="example-time-input">
+                                                    <input class="form-control" name="hora" type="time" required id="example-time-input">
                                                 </div>
                                             </div>
 
@@ -350,10 +350,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                             <div class="form-group row">
                                                 <label for="example-text-input"
-                                                    class="col-2 col-form-label">Fiscal: <span style="color:red;">*</span></label>
+                                                    class="col-2 col-form-label">Fiscal: </label>
                                                 <div class="col-10">
 
-                                                    <input type="text" class="form-control" onchange="mayus(this);" name="fiscal" required
+                                                    <input type="text" class="form-control" onchange="mayus(this);" name="fiscal" 
                                                          id="nombre_id" >
                                                     <span class="form-text text-muted">Por favor ingrese nombre de fiscal.</span>
                                                 </div>
@@ -406,9 +406,9 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                                             <div class="form-group row">
-                                                <label for="example-number-input" class="col-2 col-form-label">Edad</label>
+                                                <label for="example-number-input" class="col-2 col-form-label">Edad <span style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                    <input class="form-control" type="number" value="42" name="edad" id="example-number-input">
+                                                    <input class="form-control" type="number" required value="42" name="edad" id="example-number-input">
                                                 </div>
                                             </div>
 
@@ -451,7 +451,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             
                                             <div class="form-group row">
                                                 <label for="example-text-input"
-                                                    class="col-2 col-form-label">Telefono:</label>
+                                                    class="col-2 col-form-label">Telefono: <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend"><span
@@ -471,7 +471,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                             <div class="form-group row">
                                                 <label for="example-text-input"
-                                                    class="col-2 col-form-label">Telefono Persona de confianza:</label>
+                                                    class="col-2 col-form-label">Telefono Persona de confianza: <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend"><span
@@ -489,10 +489,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-2 col-form-label">Correo
-                                                    electrónico: <span style="color:red;">*</span></label>
+                                                    electrónico: </label>
                                                 <div class="col-10">
                                                     <input type="email" class="form-control" name="correo_involucrado"
-                                                         id="correo_id" required >
+                                                         id="correo_id"  >
                                                     <span class="form-text text-muted">Por favor
                                                         ingrese su correo correo electrónico.</span>
                                                 </div>
@@ -500,7 +500,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Crimenes:  <span style="color:red;">*</span></label>
+                                                <label class="col-2 col-form-label">Delito:  <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                         <select class="form-control kt-select2"
                                                         id="municipio_id"  style="width: 100%"  name="delito" required>
