@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Admin\Servicio;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -69,7 +70,7 @@ class ServicioControler extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      
     }
 
     /**
@@ -81,5 +82,10 @@ class ServicioControler extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function servicioPorArea($id){
+        
+        return Servicio::where('area_id',$id)->get();
     }
 }

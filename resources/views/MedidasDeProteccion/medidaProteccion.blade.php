@@ -521,7 +521,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <label class="col-2 col-form-label">Area del servicio que solicita:  <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                         <select class="form-control kt-select2"
-                                                        id="municipio_id"  style="width: 100%"  name="area" required>
+                                                        id="select-area"  style="width: 100%"  name="area" required>
                                                         <option  value="">Seleccione area</option>
                                                         @foreach ($areasServicio  as $area)
                                                         <option value="{{$area}}">
@@ -539,12 +539,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <label class="col-2 col-form-label">Servicio que solicita:  <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                         <select class="form-control kt-select2"
-                                                        id="municipio_id"  style="width: 100%"  name="servicio" required>
+                                                        id="select-servicio"  style="width: 100%"  name="servicio" required>
                                                         <option  value="">Seleccione el servicio</option>
-                                                        @foreach ($servicios  as $servicio)
-                                                        <option value="{{$servicio}}">
-                                                            {{$servicio->nombre}}</option>
-                                                        @endforeach
+                                                        
         
                                                     </select>
                                                     <span class="form-text text-muted">Por favor selecciona
@@ -810,6 +807,27 @@ function soloNumeros(e){
   }
 }
 
+
+$(function() {
+    $('#select-area').on('change',onSelectAreaCambio);
+
+});
+function onSelectAreaCambio(){
+    var area= $(this).val();
+    var area_json= JSON.parse(area)
+    var area_id =area_json.id;
+    
+    $.get('/api/servicios/1',function(data){
+        var html_select='<option value"">Seleccione un servicio</option>'
+        for (let index = 0; index < data.length; index++) {
+         
+           html_select+='<option value"'+data[index]+'">'+data[index].nombre+'</option>'
+            $('#select-servicio').html(html_select);
+        }
+    });
+
+
+}
 
 
 
