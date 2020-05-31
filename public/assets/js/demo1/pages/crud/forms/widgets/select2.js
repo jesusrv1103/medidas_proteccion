@@ -14,8 +14,11 @@ var KTSelect2 = function() {
 
         // multi select
         $('#kt_select2_3, #kt_select2_3_validate').select2({
-            placeholder: "Select a state",
+            placeholder: "Selecciona un Delito",
         });
+
+
+       
 
         // basic
         $('#kt_select2_4').select2({

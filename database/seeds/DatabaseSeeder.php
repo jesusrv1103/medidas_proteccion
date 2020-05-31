@@ -20,6 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(NacionalidadTableSeeder::class);
         $this->call(UsuarioTableSeeder::class);
         $this->call(CrimenTableSeeder::class);
+        $this->call(LeyesDeProteccionTableSeeder::class);
+        $this->call(CategoriasLeyProteccionTableSeeder::class);
+        $this->call(FraccionTableSeeder::class);
+        $this->call(GrupoVulnerableTableSeeder::class);
         
     }
 }

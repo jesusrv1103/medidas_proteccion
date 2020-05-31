@@ -185,10 +185,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                  Medidas de Proteccion</h1>
+                                    Medidas de Proteccion</h1>
                             </center>
 
-                     
+
 
 
                             <!-- end: Header Menu -->
@@ -221,17 +221,17 @@ License: You must have a valid license purchased only from themeforest(the above
 
                         <!-- begin:: Content -->
                         <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-                               
 
-                               
+
+
                             <div class="row">
                                 <div class="col-md-3">
 
                                 </div>
-                               
+
                                 <div class="kt-portlet col-md-6">
 
-                                    
+
 
                                     <div class="kt-portlet__head">
                                         <div class="kt-portlet__head-label">
@@ -243,8 +243,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                     @if (session()->has('flash'))
                                     <div class="alert alert-success" role="alert">
-                                            <strong>{{session('flash')}}</strong>   
-                                      </div>
+                                        <strong>{{session('flash')}}</strong>
+                                    </div>
                                     @endif
 
                                     <!--begin::Form-->
@@ -263,38 +263,41 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="example-text-input"
-                                                    class="col-2 col-form-label">Carpeta de Investigación: </label>
+                                                <label for="example-text-input" class="col-2 col-form-label">Carpeta de
+                                                    Investigación: </label>
                                                 <div class="col-10">
 
-                                                    <input type="text" class="form-control" onchange="mayus(this);" name="carpeta" 
-                                                         id="nombre_id" >
-                                                    <span class="form-text text-muted">Por favor ingrese numero de carpeta.</span>
+                                                    <input type="text" class="form-control" onchange="mayus(this);"
+                                                        name="carpeta" id="nombre_id">
+                                                    <span class="form-text text-muted">Por favor ingrese numero de
+                                                        carpeta.</span>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="example-text-input"
-                                                    class="col-2 col-form-label">Causa Penal: </label>
+                                                <label for="example-text-input" class="col-2 col-form-label">Causa
+                                                    Penal: </label>
                                                 <div class="col-10">
 
-                                                    <input type="text" class="form-control" onchange="mayus(this);" name="causaPenal" 
-                                                         id="nombre_id" >
-                                                    <span class="form-text text-muted">Por favor ingrese Causa Penal.</span>
+                                                    <input type="text" class="form-control" onchange="mayus(this);"
+                                                        name="causaPenal" id="nombre_id">
+                                                    <span class="form-text text-muted">Por favor ingrese Causa
+                                                        Penal.</span>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Municipio:  <span style="color:red;">*</span></label>
+                                                <label class="col-2 col-form-label">Municipio: <span
+                                                        style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                        <select class="form-control kt-select2"
-                                                        id="municipio_id"  style="width: 100%"  name="municipio_carpeta" required>
-                                                        <option  value="">Seleccione un municipio</option>
-                                                        @foreach ($municipios  as $municipio)
+                                                    <select class="form-control kt-select2" id="kt-select-municipio"
+                                                        style="width: 100%" name="municipio_carpeta" required>
+                                                        <option value="">Seleccione un municipio</option>
+                                                        @foreach ($municipios as $municipio)
                                                         <option value="{{$municipio}}">
                                                             {{$municipio->nombre}}</option>
                                                         @endforeach
-        
+
                                                     </select>
                                                     <span class="form-text text-muted">Por favor selecciona
                                                         el
@@ -304,16 +307,17 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Distritos:  <span style="color:red;">*</span></label>
+                                                <label class="col-2 col-form-label">Distritos: <span
+                                                        style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                        <select class="form-control kt-select2"
-                                                        id="municipio_id"  style="width: 100%"  name="distrito" required>
-                                                        <option  value="">Seleccione un distrito</option>
-                                                        @foreach ($distritos  as $distrito)
+                                                    <select class="form-control kt-select2" id="kt-select-distrito"
+                                                        style="width: 100%" name="distrito" required>
+                                                        <option value="">Seleccione un distrito</option>
+                                                        @foreach ($distritos as $distrito)
                                                         <option value="{{$distrito}}">
                                                             {{$distrito->nombre}}</option>
                                                         @endforeach
-        
+
                                                     </select>
                                                     <span class="form-text text-muted">Por favor selecciona
                                                         el
@@ -322,58 +326,66 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="example-date-input" class="col-2 col-form-label">Fecha  <span style="color:red;">*</span></label>
+                                                <label for="example-date-input" class="col-2 col-form-label">Fecha <span
+                                                        style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                <input class="form-control" name="fecha_carpeta" type="date" value="{{now()}}"  id="example-date-input" required>
+                                                    <input class="form-control" name="fecha_carpeta" type="date"
+                                                        value="{{now()}}" id="example-date-input" required>
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group row">
-                                                <label for="example-time-input" class="col-2 col-form-label">Hora <span style="color:red;">*</span></label>
+                                                <label for="example-time-input" class="col-2 col-form-label">Hora <span
+                                                        style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                    <input class="form-control" name="hora" type="time" required id="example-time-input">
+                                                    <input class="form-control" name="hora" type="time" required
+                                                        id="example-time-input">
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group row">
                                                 <label for="example-text-input"
-                                                    class="col-2 col-form-label">Solicitante: <span style="color:red;">*</span></label>
+                                                    class="col-2 col-form-label">Solicitante: <span
+                                                        style="color:red;">*</span></label>
                                                 <div class="col-10">
 
-                                                    <input type="text" class="form-control" onchange="mayus(this);" name="solicitante" required
-                                                         id="nombre_id" >
-                                                    <span class="form-text text-muted">Por favor ingrese nombre de solicitante.</span>
+                                                    <input type="text" class="form-control" onchange="mayus(this);"
+                                                        name="solicitante" required id="nombre_id">
+                                                    <span class="form-text text-muted">Por favor ingrese nombre de
+                                                        solicitante.</span>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="example-text-input"
-                                                    class="col-2 col-form-label">Fiscal: </label>
+                                                <label for="example-text-input" class="col-2 col-form-label">Fiscal:
+                                                </label>
                                                 <div class="col-10">
 
-                                                    <input type="text" class="form-control" onchange="mayus(this);" name="fiscal" 
-                                                         id="nombre_id" >
-                                                    <span class="form-text text-muted">Por favor ingrese nombre de fiscal.</span>
+                                                    <input type="text" class="form-control" onchange="mayus(this);"
+                                                        name="fiscal" id="nombre_id">
+                                                    <span class="form-text text-muted">Por favor ingrese nombre de
+                                                        fiscal.</span>
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Tipo de Usuario:  <span style="color:red;">*</span></label>
+                                                <label class="col-2 col-form-label">Tipo de Usuario: <span
+                                                        style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                        <select class="form-control kt-select2"
-                                                        id="municipio_id"  style="width: 100%"  name="usuario" required>
-                                                        <option  value="">Seleccione un tipo de usuario</option>
-                                                        @foreach ($usuarios  as $usuario)
+                                                    <select class="form-control kt-select2" id="kt_select2_3"
+                                                        id="municipio_id" style="width: 100%" name="usuario" required>
+                                                        <option value="">Seleccione un tipo de usuario</option>
+                                                        @foreach ($usuarios as $usuario)
                                                         <option value="{{$usuario}}">
                                                             {{$usuario->nombre}}</option>
                                                         @endforeach
-        
+
                                                     </select>
                                                     <span class="form-text text-muted">Por favor selecciona
-                                                       tipo de usuario.</span>
+                                                        tipo de usuario.</span>
                                                 </div>
                                             </div>
 
@@ -384,83 +396,88 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="alert-icon"><i
                                                             class="flaticon-avatar kt-font-brand"></i></div>
                                                     <div class="alert-text">
-                                                        <h2>Datos de Víctima, Testigo o Diversa Persona que Intervenga en el Proceso Penal</h2>
+                                                        <h2>Datos de Víctima, Testigo o Diversa Persona que Intervenga
+                                                            en el Proceso Penal</h2>
                                                     </div>
                                                 </div>
                                             </div>
-                                          
+
 
 
 
                                             <div class="form-group row">
-                                                <label for="example-text-input"
-                                                    class="col-2 col-form-label">Nombre:  <span style="color:red;">*</span></label>
+                                                <label for="example-text-input" class="col-2 col-form-label">Nombre:
+                                                    <span style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                    <input type="text" class="form-control" name="nombre_involucrado" required
-                                                        
-                                                         onchange="mayus(this);">
+                                                    <input type="text" class="form-control" name="nombre_involucrado"
+                                                        required onchange="mayus(this);">
                                                     <span class="form-text text-muted">
-                                                        Por favor ingrese Nombre de la víctima, testigo o diversa persona que intervenga en el proceso penal.</span>
+                                                        Por favor ingrese Nombre de la víctima, testigo o diversa
+                                                        persona que intervenga en el proceso penal.</span>
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group row">
-                                                <label for="example-number-input" class="col-2 col-form-label">Edad <span style="color:red;">*</span></label>
+                                                <label for="example-number-input" class="col-2 col-form-label">Edad
+                                                    <span style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                    <input class="form-control" type="number" required value="42" name="edad" id="example-number-input">
+                                                    <input class="form-control" type="number" required value="42"
+                                                        name="edad" id="example-number-input">
                                                 </div>
                                             </div>
 
-                                           
+
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Nacionalidad:  <span style="color:red;">*</span></label>
+                                                <label class="col-2 col-form-label">Nacionalidad: <span
+                                                        style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                        <select class="form-control kt-select2"
-                                                        id="municipio_id"  style="width: 100%"  name="nacionalidad" required>
-                                                        <option  value="">Seleccione nacionalidad</option>
-                                                        @foreach ($nacionalidades  as $nacionalidad)
+                                                    <select class="form-control kt-select2" id="kt-select-nacionalidad"
+                                                        style="width: 100%" name="nacionalidad" required>
+                                                        <option value="">Seleccione nacionalidad</option>
+                                                        @foreach ($nacionalidades as $nacionalidad)
                                                         <option value="{{$nacionalidad}}">
                                                             {{$nacionalidad->nombre}}</option>
                                                         @endforeach
-        
+
                                                     </select>
                                                     <span class="form-text text-muted">Por favor selecciona
-                                                       nacionalidad.</span>
+                                                        nacionalidad.</span>
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Ocupacion:  <span style="color:red;">*</span></label>
+                                                <label class="col-2 col-form-label">Ocupacion: <span
+                                                        style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                        <select class="form-control kt-select2"
-                                                        id="municipio_id"  style="width: 100%"  name="ocupacion" required>
-                                                        <option  value="">Seleccione ocupacion</option>
-                                                        @foreach ($ocupaciones  as $ocupacion)
+                                                    <select class="form-control kt-select2" id="kt-select-ocupacion"
+                                                        style="width: 100%" name="ocupacion" required>
+                                                        <option value="">Seleccione ocupacion</option>
+                                                        @foreach ($ocupaciones as $ocupacion)
                                                         <option value="{{$ocupacion}}">
                                                             {{$ocupacion->nombre}}</option>
                                                         @endforeach
-        
+
                                                     </select>
                                                     <span class="form-text text-muted">Por favor selecciona
-                                                       ocupacion.</span>
+                                                        ocupacion.</span>
                                                 </div>
                                             </div>
 
-                                            
+
                                             <div class="form-group row">
-                                                <label for="example-text-input"
-                                                    class="col-2 col-form-label">Telefono: <span style="color:red;">*</span></label>
+                                                <label for="example-text-input" class="col-2 col-form-label">Telefono:
+                                                    <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend"><span
                                                                 class="input-group-text"><i
                                                                     class="la la-chain"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control"
-                                                             id="numeroTelefono_id"
-                                                            name="telefono" onkeypress=" return soloNumeros(event);" required>
+                                                        <input type="text" class="form-control" id="numeroTelefono_id"
+                                                            name="telefono" onkeypress=" return soloNumeros(event);"
+                                                            required>
 
                                                     </div>
                                                     <span class="form-text text-muted">Por favor ingrese
@@ -470,20 +487,22 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                                             <div class="form-group row">
-                                                <label for="example-text-input"
-                                                    class="col-2 col-form-label">Telefono Persona de confianza: <span style="color:red;">*</span></label>
+                                                <label for="example-text-input" class="col-2 col-form-label">Telefono
+                                                    Persona de confianza: <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend"><span
                                                                 class="input-group-text"><i
                                                                     class="la la-chain"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control"
-                                                             id="numeroTelefono_id"
-                                                            name="telefono_confianza" onkeypress=" return soloNumeros(event);" required>
+                                                        <input type="text" class="form-control" id="numeroTelefono_id"
+                                                            name="telefono_confianza"
+                                                            onkeypress=" return soloNumeros(event);" required>
 
                                                     </div>
-                                                    <span class="form-text text-muted">Por favor ingrese Teléfono de otra persona de confianza con quien se pueda establecer comunicación con la persona valorada.</span>
+                                                    <span class="form-text text-muted">Por favor ingrese Teléfono de
+                                                        otra persona de confianza con quien se pueda establecer
+                                                        comunicación con la persona valorada.</span>
                                                 </div>
                                             </div>
 
@@ -492,7 +511,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     electrónico: </label>
                                                 <div class="col-10">
                                                     <input type="email" class="form-control" name="correo_involucrado"
-                                                         id="correo_id"  >
+                                                        id="correo_id">
                                                     <span class="form-text text-muted">Por favor
                                                         ingrese su correo correo electrónico.</span>
                                                 </div>
@@ -500,94 +519,101 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Delito:  <span style="color:red;">*</span></label>
+                                                <label class="col-2 col-form-label">Delito: <span
+                                                        style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                        <select class="form-control kt-select2"
-                                                        id="municipio_id"  style="width: 100%"  name="delito" required>
-                                                        <option  value="">Seleccione delito</option>
-                                                        @foreach ($crimenes  as $crimen)
+                                                    <select class="form-control   kt-select2" id="kt_select2-delito"
+                                                        multiple="multiple" style="width: 100%" name="delito[]">
+                                                        <option value="">Seleccione delito</option>
+                                                        @foreach ($crimenes as $crimen)
                                                         <option value="{{$crimen}}">
                                                             {{$crimen->nombre}}</option>
                                                         @endforeach
-        
+
                                                     </select>
                                                     <span class="form-text text-muted">Por favor selecciona
-                                                       delito.</span>
+                                                        delito.</span>
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Area del servicio que solicita:  <span style="color:red;">*</span></label>
+                                                <label class="col-2 col-form-label">Area del servicio que solicita:
+                                                    <span style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                        <select class="form-control kt-select2"
-                                                        id="select-area"  style="width: 100%"  name="area" required>
-                                                        <option  value="">Seleccione area</option>
-                                                        @foreach ($areasServicio  as $area)
+                                                    <select class="form-control kt-selectpicker" id="kt-select-area"
+                                                        style="width: 100%" name="area" required>
+                                                        <option value="" selected disabled>Seleccione Area</option>
+                                                        @foreach ($areasServicio as $area)
                                                         <option value="{{$area}}">
                                                             {{$area->nombre}}</option>
                                                         @endforeach
-        
+
                                                     </select>
                                                     <span class="form-text text-muted">Por favor selecciona
-                                                       area del servicio que solicita.</span>
+                                                        area del servicio que solicita.</span>
                                                 </div>
                                             </div>
+
+
+
 
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Servicio que solicita:  <span style="color:red;">*</span></label>
+                                                <label class="col-2 col-form-label">Servicio que solicita: <span
+                                                        style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                        <select class="form-control kt-select2"
-                                                        id="select-servicio"  style="width: 100%"  name="servicio" required>
-                                                        <option  value="">Seleccione el servicio</option>
-                                                        
-        
+
+                                                    <select class="form-control" id="select-servicio" multiple="multiple"
+                                                        style="width: 100%" name="servicio" required>
+                                                        <option value="">Seleccione el Servicio</option>
+
                                                     </select>
                                                     <span class="form-text text-muted">Por favor selecciona
-                                                       servicio.</span>
+                                                        servicio.</span>
                                                 </div>
                                             </div>
 
-                                            <input   name="nombre_servicio" id=nombre_servicio >
+
+
 
                                             <div class="kt-portlet__foot">
                                                 <div class="kt-form__actions">
                                                     <div class="row ">
-                                                            <div class="col-md-4">
+                                                        <div class="col-md-4">
 
-                                                                </div>
-                                                        
+                                                        </div>
+
                                                         <div class="col-md-4 btn-lg">
-                                                            <button type="submit"
-                                                                class="btn btn-success" id="kt_sweetalert_demo_3_3">Enviar Formulario</button>
+                                                            <button type="submit" class="btn btn-success"
+                                                                id="kt_sweetalert_demo_3_3">Enviar Formulario</button>
 
 
 
-                                                                
+
                                                         </div>
                                                         <div class="col-md-4">
 
-                                                            </div>
-                                                       
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group form-group-last">
-                                                    <div class="alert alert-secondary" role="alert">
-                                                        <div class="alert-icon"><i
-                                                                class="flaticon-warning-sign kt-font-brand"></i></div>
-                                                        <div class="alert-text">
-                                                          Mensaje
-                                                        </div>
+                                                <div class="alert alert-secondary" role="alert">
+                                                    <div class="alert-icon"><i
+                                                            class="flaticon-warning-sign kt-font-brand"></i></div>
+                                                    <div class="alert-text">
+                                                        Mensaje
                                                     </div>
                                                 </div>
+                                            </div>
                                     </form>
 
                                     <!--end::Form-->
                                 </div>
-                               
+
 
                             </div>
                             <!--begin::Portlet-->
@@ -763,8 +789,12 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="/assets/js/demo1/pages/crud/forms/validation/form-controls.js" type="text/javascript"></script>
 <script src="/assets/js/demo1/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>
 <script src="/assets/js/demo1/pages/crud/forms/widgets/dropzone.js" type="text/javascript"></script>
+<script src="/assets/js/demo1/pages/crud/forms/widgets/bootstrap-select.js" type="text/javascript"></script>
+<!--begin::Page Scripts(used by this page) -->
+<script src="/assets/js/demo1/pages/crud/forms/widgets/bootstrap-select.js" type="text/javascript"></script>
+
+
 <script>
-    
     function mayus(e) {
  
  e.value = e.value.toUpperCase();
@@ -809,21 +839,22 @@ function soloNumeros(e){
 
 
 $(function() {
-    $('#select-area').on('change',onSelectAreaCambio);
+    $('#kt-select-area').on('change',onSelectAreaCambio);
 
 });
+
 function onSelectAreaCambio(){
     var area= $(this).val();
     var area_json= JSON.parse(area)
     var area_id =area_json.id;
-    
+   
     $.get('/api/servicios/1',function(data){
         var html_select='<option value"">Seleccione un servicio</option>'
         for (let index = 0; index < data.length; index++) {
            
            html_select+='<option value="'+data[index].id+'">'+data[index].nombre+'</option>'
             $('#select-servicio').html(html_select);
-            document.getElementById('nombre_servicio').value="";
+           
         }
     });
 
@@ -834,9 +865,40 @@ $(document).on('change', '#select-servicio', function(event) {
      $('#nombre_servicio').val($("#select-servicio option:selected").text());
 });
 
+$('#kt-select-ocupacion, #kt_select2_3_validate').select2({
+            placeholder: "Selecciona una Ocupacion",
+        });
+
+        
+$('#kt_select2-delito, #kt_select2_3_validate').select2({
+        placeholder: "Selecciona un Delito",
+  });
+
+$('#kt-select-municipio, #kt_select2_3_validate').select2({
+        placeholder: "Selecciona un Municipio",
+  });
+
+  $('#kt-select-distrito, #kt_select2_3_validate').select2({
+        placeholder: "Selecciona un Distrito",
+  });
+
+
+  $('#kt-select-nacionalidad, #kt_select2_3_validate').select2({
+        placeholder: "Selecciona una Nacioanlidad",
+  });
+
+  $('#kt-select-area, #kt_select2_3_validate').select2({
+        placeholder: "Selecciona Area del Servicio que se Solcita",
+  });
+
+  $('#select-servicio, #kt_select2_3_validate').select2({
+        placeholder: "Selecciona Area del Servicio que se Solcita",
+  });
+
+
+
 
 </script>
 
 
 </html>
-
