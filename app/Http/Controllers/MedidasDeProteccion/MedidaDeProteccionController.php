@@ -73,9 +73,9 @@ class MedidaDeProteccionController extends Controller
        
 
        Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
-
-        
-       return redirect()->back()->with('flash', 'Se ha recibido su informacion, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;
+        //dd($request);
+       
+      return redirect()->back()->with('flash', 'Se ha recibido su informacion, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;
       
     }
 

@@ -549,7 +549,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
-
+                                            <input   name="nombre_servicio" id=nombre_servicio >
 
                                             <div class="kt-portlet__foot">
                                                 <div class="kt-form__actions">
@@ -820,15 +820,19 @@ function onSelectAreaCambio(){
     $.get('/api/servicios/1',function(data){
         var html_select='<option value"">Seleccione un servicio</option>'
         for (let index = 0; index < data.length; index++) {
-         
-           html_select+='<option value"'+data[index]+'">'+data[index].nombre+'</option>'
+           
+           html_select+='<option value="'+data[index].id+'">'+data[index].nombre+'</option>'
             $('#select-servicio').html(html_select);
+            document.getElementById('nombre_servicio').value="";
         }
     });
 
 
 }
 
+$(document).on('change', '#select-servicio', function(event) {
+     $('#nombre_servicio').val($("#select-servicio option:selected").text());
+});
 
 
 </script>
