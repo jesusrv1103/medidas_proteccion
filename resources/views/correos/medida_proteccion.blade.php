@@ -121,7 +121,7 @@
 
         <tr>
             <td>Servicio que solicita: </td>
-            <td>{{json_decode($request->input('servicio'))->nombre}} </td>
+            <td>{{$request->nombre_servicio}} </td>
         </tr>
         
         
