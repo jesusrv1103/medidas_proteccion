@@ -35,10 +35,10 @@ define(function () {
       return message;
     },
     noResults: function () {
-      return 'No results found';
+      return 'No se encontraron resultados';
     },
     searching: function () {
-      return 'Searching…';
+      return 'Buscando…';
     }
   };
 });

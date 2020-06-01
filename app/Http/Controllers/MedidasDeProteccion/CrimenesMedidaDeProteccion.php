@@ -5,7 +5,7 @@ namespace App\Http\Controllers\MedidasDeProteccion;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CarpetaController extends Controller
+class CrimenesMedidaDeProteccion extends Controller
 {
     /**
      * Display a listing of the resource.

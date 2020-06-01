@@ -4,7 +4,7 @@ namespace App\MedidasDeProteccion;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MedidaProteccion extends Model
+class ServicioMedidaDeProteccion extends Model
 {
     //
 }

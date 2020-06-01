@@ -4,7 +4,7 @@ namespace App\MedidasDeProteccion;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Carpeta extends Model
+class GVulnerableMProteccion extends Model
 {
     //
 }
