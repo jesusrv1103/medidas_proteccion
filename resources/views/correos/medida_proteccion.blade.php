@@ -13,16 +13,25 @@
     <h1> Medidas de Proteccion</h1>
     <table>
         <tr>
-            <th colspan="2">Datos de Carpeta de Investigación</th>
+            <th colspan="2">Datos de Meddida de Proteccion</th>
         </tr>
         <tr>
-            <td> Nombre: </td>
+            <td> Carpeta: </td>
             <td>{{$request->carpeta}} </td>
         </tr>
+
+
 
         <tr>
             <td>Causa Penal: </td>
             <td>{{$request->causaPenal}}  </td>
+        </tr>
+        <tr>
+            <td>Delitos: </td>
+            <td>
+                foreach($delitos as $)
+             
+             </td>
         </tr>
 
 

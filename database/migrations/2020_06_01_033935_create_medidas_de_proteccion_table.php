@@ -21,8 +21,7 @@ class CreateMedidasDeProteccionTable extends Migration
             $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->BigInteger('distrito_id')->unsigned();
             $table->foreign('distrito_id')->references('id')->on('distritos');
-            $table->BigInteger('usuario_id')->unsigned();
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
+         
             $table->timestamps();
         });
     }

@@ -18,9 +18,8 @@ use App\Admin\Servicio;
 use App\Admin\Usuario;
 use Mail;
 use App\Mail\MedidaDeProteccionRecibida;
-use App\MedidasDeProteccion\Carpeta;
-use App\MedidasDeProteccion\Involucrado;
-Use App\MedidasDeProteccion\MedidaProteccion;
+
+Use App\MedidasDeProteccion\MedidaDeProteccion;
 
 class MedidaDeProteccionController extends Controller
 {
@@ -60,20 +59,18 @@ class MedidaDeProteccionController extends Controller
        //json_decode($request->input('municipio_carpeta'))->nombre;
        
 
+    /*
      
-<<<<<<< HEAD
        Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
-
-        
-       return redirect()->back()->with('flash', 'Su informacion ha sido recibida, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;
+       return redirect()->back()->with('flash', 
+       'Su informacion ha sido recibida, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');
       
-=======
+       */
 
-       Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
-        //dd($request);
->>>>>>> 7453f25fc411d5795e23e3648a7bae7e2b86deec
-       
-      return redirect()->back()->with('flash', 'Se ha recibido su informacion, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;
+       return $request;
+
+      // return  view('MedidasDeProteccionRecibida',compact('request'));
+    
       
     }
 }

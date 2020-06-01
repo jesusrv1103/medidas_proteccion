@@ -21,7 +21,10 @@ class CreateTestigosTable extends Migration
             $table->foreign('nacionalidad_id')->references('id')->on('nacionalidades');
             $table->BigInteger('ocupacion_id')->unsigned();
             $table->foreign('ocupacion_id')->references('id')->on('ocupaciones');
+            $table->string('correo')->nullable($value = true);
             $table->string('domiclio');
+            $table->BigInteger('usuario_id')->unsigned();
+            $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->timestamps();
         });
     }

@@ -257,7 +257,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="alert-icon"><i
                                                             class="flaticon-avatar kt-font-brand"></i></div>
                                                     <div class="alert-text">
-                                                        <h2>Datos de Carpeta de Investigación</h2>
+                                                        <h2>Datos de Carpeta de Medida de Proteccion</h2>
                                                     </div>
                                                 </div>
                                             </div>
@@ -285,6 +285,26 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         Penal.</span>
                                                 </div>
                                             </div>
+
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Delito: <span
+                                                        style="color:red;">*</span></label>
+                                                <div class="col-10">
+                                                    <select class="form-control   kt-select2" id="kt_select2-delito"
+                                                        multiple="multiple" style="width: 100%" name="delito[]">
+                                                        <option value="">Seleccione delito</option>
+                                                        @foreach ($crimenes as $crimen)
+                                                        <option value="{{$crimen}}">
+                                                            {{$crimen->nombre}}</option>
+                                                        @endforeach
+
+                                                    </select>
+                                                    <span class="form-text text-muted">Por favor selecciona
+                                                        delito.</span>
+                                                </div>
+                                            </div>
+
 
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label">Municipio: <span
@@ -325,6 +345,21 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
+
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-2 col-form-label">Fiscal:
+                                                </label>
+                                                <div class="col-10">
+
+                                                    <input type="text" class="form-control" onchange="mayus(this);"
+                                                        name="fiscal" >
+                                                    <span class="form-text text-muted">Por favor ingrese nombre de
+                                                        fiscal.</span>
+                                                </div>
+                                            </div>
+
+
+
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-2 col-form-label">Fecha <span
                                                         style="color:red;">*</span></label>
@@ -358,21 +393,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">Fiscal:
-                                                </label>
-                                                <div class="col-10">
-
-                                                    <input type="text" class="form-control" onchange="mayus(this);"
-                                                        name="fiscal" >
-                                                    <span class="form-text text-muted">Por favor ingrese nombre de
-                                                        fiscal.</span>
-                                                </div>
-                                            </div>
+                                         
 
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Tipo de Usuario: <span
+                                                <label class="col-2 col-form-label">Tipo de Usuario que solicita: <span
                                                         style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <select class="form-control kt-select2" id="kt_select2_3"
@@ -388,21 +413,16 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         tipo de usuario.</span>
                                                 </div>
                                             </div>
-
-
-
+                                            
                                             <div class="form-group form-group-last">
                                                 <div class="alert alert-secondary" role="alert">
                                                     <div class="alert-icon"><i
                                                             class="flaticon-avatar kt-font-brand"></i></div>
                                                     <div class="alert-text">
-                                                        <h2>Datos de Víctima, Testigo o Diversa Persona que Intervenga
-                                                            en el Proceso Penal</h2>
+                                                        <h2>Datos de la Víctima, Testigo o Diversa Persona que Intervenga en el Proceso Penal </h2>
                                                     </div>
                                                 </div>
                                             </div>
-
-
 
 
                                             <div class="form-group row">
@@ -426,6 +446,20 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         name="edad" id="example-number-input">
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <label for="example-text-input" class="col-2 col-form-label">Domicilio:
+                                                    <span style="color:red;">*</span></label>
+                                                <div class="col-10">
+                                                    <input type="text" class="form-control" name="domicilio_testigo"
+                                                        required onchange="mayus(this);">
+                                                    <span class="form-text text-muted">
+                                                        Por favor ingrese domicilio de la víctima, testigo o diversa
+                                                        persona que intervenga en el proceso penal.</span>
+                                                </div>
+                                            </div>
+
+
 
 
                                             <div class="form-group row">
@@ -465,6 +499,24 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Grupos Vulnerables:
+                                                    <span style="color:red;">*</span></label>
+                                                <div class="col-10">
+                                                    <select class="form-control kt-select2" id="kt-grupo-vulnerable"
+                                                        style="width: 100%" name="gruposVulnerables[]" required multiple="multiple">
+
+                                                        @foreach ($grupos_vulnerables as $grupo)
+                                                        <option value="{{$grupo}}">
+                                                            {{$grupo->nombre}}</option>
+                                                        @endforeach
+
+                                                    </select>
+                                                    <span class="form-text text-muted">Por favor Selecciona
+                                                        Grupo del Servicio que Solicita.</span>
+                                                </div>
+                                            </div>
+
 
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-2 col-form-label">Telefono:
@@ -487,6 +539,30 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                                             <div class="form-group row">
+                                                <label for="example-text-input" class="col-2 col-form-label">Correo
+                                                    electrónico: </label>
+                                                <div class="col-10">
+                                                    <input type="email" class="form-control" name="correo_involucrado"
+                                                        id="correo_id">
+                                                    <span class="form-text text-muted">Por favor
+                                                        ingrese su correo correo electrónico.</span>
+                                                </div>
+                                            </div>
+
+
+
+                                            
+                                            <div class="form-group form-group-last">
+                                                <div class="alert alert-secondary" role="alert">
+                                                    <div class="alert-icon"><i
+                                                            class="flaticon-avatar kt-font-brand"></i></div>
+                                                    <div class="alert-text">
+                                                        <h2>Datos de Persona de Confianza</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
                                                 <label for="example-text-input" class="col-2 col-form-label">Telefono
                                                     Persona de confianza: <span style="color:red;">*</span></label>
                                                 <div class="col-10">
@@ -506,33 +582,35 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
+
+
+
+
+
+
                                             <div class="form-group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">Correo
-                                                    electrónico: </label>
+                                                <label for="example-text-input" class="col-2 col-form-label">Domicilio  Persona de confianza:
+                                                    <span style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                    <input type="email" class="form-control" name="correo_involucrado"
-                                                        id="correo_id">
-                                                    <span class="form-text text-muted">Por favor
-                                                        ingrese su correo correo electrónico.</span>
+                                                    <input type="text" class="form-control" name="domicili_confianza"
+                                                        required onchange="mayus(this);">
+                                                    <span class="form-text text-muted">
+                                                    Por favor ingrese Domicilio de
+                                                        otra persona de confianza con quien se pueda establecer
+                                                        comunicación con la persona valorada.</span>
                                                 </div>
                                             </div>
 
 
-                                            <div class="form-group row">
-                                                <label class="col-2 col-form-label">Delito: <span
-                                                        style="color:red;">*</span></label>
-                                                <div class="col-10">
-                                                    <select class="form-control   kt-select2" id="kt_select2-delito"
-                                                        multiple="multiple" style="width: 100%" name="delito[]">
-                                                        <option value="">Seleccione delito</option>
-                                                        @foreach ($crimenes as $crimen)
-                                                        <option value="{{$crimen}}">
-                                                            {{$crimen->nombre}}</option>
-                                                        @endforeach
 
-                                                    </select>
-                                                    <span class="form-text text-muted">Por favor selecciona
-                                                        delito.</span>
+                                          
+                                            <div class="form-group form-group-last">
+                                                <div class="alert alert-secondary" role="alert">
+                                                    <div class="alert-icon"><i
+                                                            class="flaticon-avatar kt-font-brand"></i></div>
+                                                    <div class="alert-text">
+                                                        <h2>Datos Generales</h2>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -578,23 +656,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
 
-                                            <div class="form-group row">
-                                                <label class="col-2 col-form-label">Grupos Vulnerables:
-                                                    <span style="color:red;">*</span></label>
-                                                <div class="col-10">
-                                                    <select class="form-control kt-select2" id="kt-grupo-vulnerable"
-                                                        style="width: 100%" name="gruposVulnerables[]" required multiple="multiple">
 
-                                                        @foreach ($grupos_vulnerables as $grupo)
-                                                        <option value="{{$grupo}}">
-                                                            {{$grupo->nombre}}</option>
-                                                        @endforeach
-
-                                                    </select>
-                                                    <span class="form-text text-muted">Por favor Selecciona
-                                                        Grupo del Servicio que Solicita.</span>
-                                                </div>
-                                            </div>
+{{--
+                                         
 
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label">Ley del Servicio que Solicita:
@@ -649,6 +713,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         servicio que solicita.</span>
                                                 </div>
                                             </div>
+
+
+                                            --}}
 
                                             <div class="form-group row">
                                                 
