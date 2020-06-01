@@ -583,7 +583,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <select class="form-control kt-select2" id="kt-grupo-vulnerable"
-                                                        style="width: 100%" name="area" required multiple="multiple">
+                                                        style="width: 100%" name="gruposVulnerables[]" required multiple="multiple">
 
                                                         @foreach ($grupos_vulnerables as $grupo)
                                                         <option value="{{$grupo}}">
@@ -601,7 +601,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <select class="form-control kt-select2" id="kt-ley"
-                                                        style="width: 100%" name="area" required>
+                                                        style="width: 100%" name="leyServicio[]" required>
                                                         <option></option>
                                                         @foreach ($leyes as $ley)
                                                         <option value="{{$ley}}">
@@ -620,7 +620,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <select class="form-control kt-select2" id="kt-categoria"
-                                                        style="width: 100%" name="area" required>
+                                                        style="width: 100%" name="categoriaServicio[]" required>
                                                         <option></option>
                                                         @foreach ($categorias as $categoria)
                                                         <option value="{{$categoria}}">
@@ -640,7 +640,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <select class="form-control kt-select2" id="select-fraccion"
-                                                        style="width: 100%" name="servicio"
+                                                        style="width: 100%" name="fraccionServicio[]"
                                                         required>
                                                         <option value="">Seleccione el Servicio</option>
 
@@ -654,8 +654,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 
                                                 <div class="col-12">
                                                         <label for="example-text-input"
-                                                        class=" col-form-label">Descripción:</label>
-                                                     <textarea class="form-control" rows="12" id="descripcion_id" name="descripcion" onchange="mayus(this);"></textarea>
+                                                        class=" col-form-label">Relato Breve de los Hechos:</label>
+                                                     <textarea class="form-control" rows="12"  name="descripcion" onchange="mayus(this);"></textarea>
                                                     <span class="form-text text-muted">Por favor ingresa una
                                                         descripción clara y concisa.</span>
                                                 </div>

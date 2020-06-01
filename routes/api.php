@@ -14,3 +14,5 @@ use Illuminate\Http\Request;
 */
 Route::get('servicios/{id}','Admin\ServicioControler@servicioPorArea');
 Route::get('fracciones/{idLey}/{idCategoria}','Admin\FraccionController@fraccionPorCategoria');
+
+Route::post('medidasdeprotecion/{id}/evidencia', 'MedidasDeProteccion\MedidasDeProteccionController@store')->name('medidasdeproteccion.evidencias.store');

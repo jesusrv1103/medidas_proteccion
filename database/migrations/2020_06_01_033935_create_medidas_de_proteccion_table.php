@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCarpetasTable extends Migration
+class CreateMedidasDeProteccionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CreateCarpetasTable extends Migration
      */
     public function up()
     {
-        Schema::create('carpetas', function (Blueprint $table) {
+        Schema::create('medidas_de_proteccion', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('carpeta')->nullable($value = true);
-            $table->string('causaPenal')->nullable($value = true);
+            $table->string("carpeta");
+            $table->string("causa_penal");
             $table->BigInteger('municipio_id')->unsigned();
             $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->BigInteger('distrito_id')->unsigned();
             $table->foreign('distrito_id')->references('id')->on('distritos');
-            $table->string('solicitante');
-            $table->string('fiscal');
             $table->BigInteger('usuario_id')->unsigned();
             $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->timestamps();
@@ -36,6 +34,6 @@ class CreateCarpetasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carpetas');
+        Schema::dropIfExists('medida_de_proteccions');
     }
 }

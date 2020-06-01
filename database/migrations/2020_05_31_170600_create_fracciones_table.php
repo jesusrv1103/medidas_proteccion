@@ -19,7 +19,7 @@ class CreateFraccionesTable extends Migration
             $table->BigInteger('ley_proteccion_id')->unsigned();
             $table->foreign('ley_proteccion_id')->references('id')->on('leyes_de_proteccion');
             $table->BigInteger('cat_ley_proteccion_id')->unsigned();
-            $table->foreign('cat_ley_proteccion_id')->references('id')->on('leyes_de_proteccion');
+            $table->foreign('cat_ley_proteccion_id')->references('id')->on('categorias_ley_de_proteccion');
             $table->timestamps();
         });
     }
