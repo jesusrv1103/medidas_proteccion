@@ -17,19 +17,19 @@
         </tr>
         <tr>
             <td> Carpeta: </td>
-            <td>01/2020 </td>
+            <td>{{$request->carpeta}} </td>
         </tr>
 
 
 
         <tr>
             <td>Causa Penal: </td>
-            <td>Asesinato </td>
+            <td>{{$request->causaPenal}}  </td>
         </tr>
         <tr>
             <td>Delitos: </td>
             <td>
-                Asesinato/Robo a Mano Armada
+                foreach($delitos as $)
              
              </td>
         </tr>
@@ -37,23 +37,18 @@
 
         <tr>
             <td>Municipio: </td>
-            <td>Villanueva </td>
+            <td>{{json_decode($request->input('municipio_carpeta'))->nombre}}  </td>
         </tr>
 
 
         <tr>
             <td>Distritos: </td>
-            <td>Villanueva  </td>
-        </tr>
-
-        <tr>
-            <td>Fiscal: </td>
-            <td>JUAN CARLOS RAGARCIA  </td>
+            <td>{{json_decode($request->input('distrito'))->nombre}}  </td>
         </tr>
 
         <tr>
             <td>Fecha: </td>
-            <td>05/05/2020  </td>
+            <td>{{$request->fecha_carpeta}}  </td>
         </tr>
 
         <tr>
@@ -62,15 +57,21 @@
         </tr>
 
 
-        
+        <tr>
+            <td>Solicitante: </td>
+            <td>{{$request->solicitante}}  </td>
+        </tr>
 
 
         <tr>
-            <td>Solicitante: </td>
-            <td>JUAN CARLOS GARCIA HERNANDEZ  </td>
+            <td>Fiscal: </td>
+            <td>{{$request->fiscal}}  </td>
         </tr>
 
-  
+        <tr>
+            <td>Tipo de Usuario: </td>
+            <td>{{json_decode($request->input('usuario'))->nombre}} </td>
+        </tr>
        
     </table>
 
@@ -92,11 +93,6 @@
         </tr>
 
         <tr>
-            <td> Domicilio: </td>
-            <td>VILLANUEVA ZACATECAS BARRIO DEL GUADALUPE CALLE DE LA CONCEPCION #32</td>
-        </tr>
-
-        <tr>
             <td> Nacionalidad: </td>
             <td>{{json_decode($request->input('nacionalidad'))->nombre}} </td>
         </tr>
@@ -108,28 +104,16 @@
         </tr>
 
         <tr>
-            <td>Tipo de Usuario: </td>
-            <td>Victima Directa</td>
-        </tr>
-
-
-        <tr>
-            <td> Grupos Vulnerables: </td>
-            <td>Mujer/ Persona Indigena</td>
-        </tr>
-
-        <tr>
             <td>Telefono: </td>
             <td>{{$request->telefono}}</td>
         </tr>
 
         <tr>
-            <td>Correo: </td>
-            <td> S/R</td>
+            <td>Telefono Persona de confianza: </td>
+            <td>{{$request->telefono_confianza}}</td>
         </tr>
-        
 
-     
+        <tr>
             <td>Correo electrónico: </td>
             <td>{{$request->correo_involucrado}}</td>
         </tr>
@@ -150,56 +134,6 @@
         </tr>
         
         
-       
-    </table>
-
-
-    <table>
-        <tr>
-            <th colspan="2">Datos de Persona de Confianza</th>
-        </tr>
-        <tr>
-            <td>Telefono Persona de confianza: </td>
-            <td>4991058737</td>
-        </tr>
-
-        <tr>
-            <td>Domicilio de Persona de confianza: </td>
-            <td>Villlanueva Zacatecas BARRIO DE LOS VARELA  CALLE DE LAS FLORES #212</td>
-        </tr>
-
-       
-    </table>
-
-    <table>
-        <tr>
-            <th colspan="2">Datos Generales</th>
-        </tr>
-        <tr>
-            <td>Area del Servicio que Solicita: </td>
-            <td>Area de Trabajo Social</td>
-        </tr>
-
-        <tr>
-            <td>Servicio que Solicita: </td>
-            <td>Orientacion Legal</td>
-        </tr>
-
-       
-    </table>
-
-    <table>
-        <tr>
-            <th colspan="2">Datos Generales</th>
-        </tr>
-        <tr>
-          <p>
-          El buscador de Google o buscador web de Google es un motor de búsqueda en la web propiedad de Alphabet Inc., es el motor de búsqueda más utilizado en la Web, ​ recibe cientos de millones de consultas cada día a través de sus diferentes servicios.​ Wikipedia
-           </p>
-        </tr>
-
-     
-
        
     </table>
   

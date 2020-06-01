@@ -257,7 +257,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="alert-icon"><i
                                                             class="flaticon-avatar kt-font-brand"></i></div>
                                                     <div class="alert-text">
-                                                        <h2>Datos de Carpeta de Medida de Proteccion</h2>
+                                                        <h2>Datos  de Medida de Proteccion</h2>
                                                     </div>
                                                 </div>
                                             </div>
@@ -657,8 +657,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-{{--
-                                         
+{{--                                       
 
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label">Ley del Servicio que Solicita:
