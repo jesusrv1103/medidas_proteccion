@@ -51,6 +51,9 @@ class MedidaDeProteccionController extends Controller
         ));
     }
 
+    public function index(){
+        return view('MedidasDeProteccion.index');
+    }
 
     public function store(Request $request)
     {
@@ -59,18 +62,53 @@ class MedidaDeProteccionController extends Controller
        //json_decode($request->input('municipio_carpeta'))->nombre;
        
 
-    /*
+    
      
        Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
        return redirect()->back()->with('flash', 
        'Su informacion ha sido recibida, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');
       
-       */
+       
 
-       return $request;
 
       // return  view('MedidasDeProteccionRecibida',compact('request'));
     
       
     }
+
+    public function show(){
+
+
+      return view('MedidasDeProteccion.detalles');
+    }
+
+    public function seguimiento(){
+        $areasServicio=AreaServicio::get();
+        $crimenes=Crimen::get();
+        $distritos=Distrito::get();
+        $municipios=Municipio::get();
+        $nacionalidades=Nacionalidad::get();
+        $ocupaciones=Ocupacion::get();
+        $servicios=Servicio::get();
+        $usuarios=Usuario::get();
+        $grupos_vulnerables=GrupoVulnerable::get();
+        $leyes=LeyesDeProteccion::get();
+        $categorias= CategoriasLeyDeProteccion::get();
+
+        return view('MedidasDeProteccion.seguimiento'
+        ,
+        compact(
+            'areasServicio',
+            'crimenes',
+            'distritos',
+            'municipios',
+            'nacionalidades',
+            'ocupaciones',
+            'servicios',
+            'usuarios',
+            'grupos_vulnerables',
+            'categorias',
+            'leyes'
+        ));
+      }
 }
