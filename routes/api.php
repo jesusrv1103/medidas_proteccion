@@ -13,3 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('servicios/{id}','Admin\ServicioControler@servicioPorArea');
+Route::get('fracciones/{idLey}/{idCategoria}','Admin\FraccionController@fraccionPorCategoria');

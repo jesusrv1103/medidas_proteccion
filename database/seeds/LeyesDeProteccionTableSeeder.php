@@ -24,12 +24,6 @@ class LeyesDeProteccionTableSeeder extends Seeder
             'nombre' => 'Ley General de Acceso de las Mujeres a una Vida Libre de Violencia',
         ]);
 
-        LeyesDeProteccion::create([
-            'nombre' => 'Órdenes de protección preventivas',
-        ]);
-
-        LeyesDeProteccion::create([
-            'nombre' => 'Órdenes de protección de naturaleza civil',
-        ]);
+      
     }
 }

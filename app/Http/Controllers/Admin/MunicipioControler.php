@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class MunicipioControler extends Controller
 {
-    //
+    public function fraccionPorCategoria($id){
+        
+    }
 }

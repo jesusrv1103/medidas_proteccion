@@ -5,10 +5,13 @@ namespace App\Http\Controllers\MedidasDeProteccion;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Admin\AreaServicio;
+use App\Admin\CategoriasLeyDeProteccion;
 use App\Admin\Crimen;
 use App\Admin\Distrito;
 use App\Admin\Municipio;
 use App\Admin\Estado;
+use App\Admin\GrupoVulnerable;
+use App\Admin\LeyesDeProteccion;
 use App\Admin\Nacionalidad;
 use App\Admin\Ocupacion;
 use App\Admin\Servicio;
@@ -45,7 +48,9 @@ class MedidaDeProteccionController extends Controller
         $ocupaciones=Ocupacion::get();
         $servicios=Servicio::get();
         $usuarios=Usuario::get();
-
+        $grupos_vulnerables=GrupoVulnerable::get();
+        $leyes=LeyesDeProteccion::get();
+        $categorias= CategoriasLeyDeProteccion::get();
         return view('MedidasDeProteccion.medidaProteccion',
         compact(
             'areasServicio',
@@ -55,7 +60,10 @@ class MedidaDeProteccionController extends Controller
             'nacionalidades',
             'ocupaciones',
             'servicios',
-            'usuarios'
+            'usuarios',
+            'grupos_vulnerables',
+            'categorias',
+            'leyes'
         ));
     }
 

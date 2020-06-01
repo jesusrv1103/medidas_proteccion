@@ -268,7 +268,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <input type="text" class="form-control" onchange="mayus(this);"
-                                                        name="carpeta" id="nombre_id">
+                                                        name="carpeta" >
                                                     <span class="form-text text-muted">Por favor ingrese numero de
                                                         carpeta.</span>
                                                 </div>
@@ -280,7 +280,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <input type="text" class="form-control" onchange="mayus(this);"
-                                                        name="causaPenal" id="nombre_id">
+                                                        name="causaPenal" >
                                                     <span class="form-text text-muted">Por favor ingrese Causa
                                                         Penal.</span>
                                                 </div>
@@ -352,7 +352,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <input type="text" class="form-control" onchange="mayus(this);"
-                                                        name="solicitante" required id="nombre_id">
+                                                        name="solicitante" required >
                                                     <span class="form-text text-muted">Por favor ingrese nombre de
                                                         solicitante.</span>
                                                 </div>
@@ -364,7 +364,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <input type="text" class="form-control" onchange="mayus(this);"
-                                                        name="fiscal" id="nombre_id">
+                                                        name="fiscal" >
                                                     <span class="form-text text-muted">Por favor ingrese nombre de
                                                         fiscal.</span>
                                                 </div>
@@ -475,7 +475,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 class="input-group-text"><i
                                                                     class="la la-chain"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control" id="numeroTelefono_id"
+                                                        <input type="text" class="form-control" 
                                                             name="telefono" onkeypress=" return soloNumeros(event);"
                                                             required>
 
@@ -495,7 +495,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 class="input-group-text"><i
                                                                     class="la la-chain"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control" id="numeroTelefono_id"
+                                                        <input type="text" class="form-control" 
                                                             name="telefono_confianza"
                                                             onkeypress=" return soloNumeros(event);" required>
 
@@ -541,9 +541,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <label class="col-2 col-form-label">Area del servicio que solicita:
                                                     <span style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                    <select class="form-control kt-selectpicker" id="kt-select-area"
+                                                    <select class="form-control kt-select2" id="kt-select-area"
                                                         style="width: 100%" name="area" required>
-                                                        <option value="" selected disabled>Seleccione Area</option>
+                                                        <option></option>
                                                         @foreach ($areasServicio as $area)
                                                         <option value="{{$area}}">
                                                             {{$area->nombre}}</option>
@@ -559,13 +559,16 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
+
+
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label">Servicio que solicita: <span
                                                         style="color:red;">*</span></label>
                                                 <div class="col-10">
 
-                                                    <select class="form-control" id="select-servicio" multiple="multiple"
-                                                        style="width: 100%" name="servicio" required>
+                                                    <select class="form-control kt-select2" id="select-servicio"
+                                                        multiple="multiple" style="width: 100%" name="servicio"
+                                                        required>
                                                         <option value="">Seleccione el Servicio</option>
 
                                                     </select>
@@ -575,6 +578,106 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
 
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Grupos Vulnerables:
+                                                    <span style="color:red;">*</span></label>
+                                                <div class="col-10">
+                                                    <select class="form-control kt-select2" id="kt-grupo-vulnerable"
+                                                        style="width: 100%" name="area" required multiple="multiple">
+
+                                                        @foreach ($grupos_vulnerables as $grupo)
+                                                        <option value="{{$grupo}}">
+                                                            {{$grupo->nombre}}</option>
+                                                        @endforeach
+
+                                                    </select>
+                                                    <span class="form-text text-muted">Por favor Selecciona
+                                                        Grupo del Servicio que Solicita.</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Ley del Servicio que Solicita:
+                                                    <span style="color:red;">*</span></label>
+                                                <div class="col-10">
+                                                    <select class="form-control kt-select2" id="kt-ley"
+                                                        style="width: 100%" name="area" required>
+                                                        <option></option>
+                                                        @foreach ($leyes as $ley)
+                                                        <option value="{{$ley}}">
+                                                            {{$ley->nombre}}</option>
+                                                        @endforeach
+
+                                                    </select>
+                                                    <span class="form-text text-muted">Por favor Selecciona
+                                                        Categoria del Servicio que Solicita.</span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Categoria del Servicio que Solicita:
+                                                    <span style="color:red;">*</span></label>
+                                                <div class="col-10">
+                                                    <select class="form-control kt-select2" id="kt-categoria"
+                                                        style="width: 100%" name="area" required>
+                                                        <option></option>
+                                                        @foreach ($categorias as $categoria)
+                                                        <option value="{{$categoria}}">
+                                                            {{$categoria->nombre}}</option>
+                                                        @endforeach
+
+                                                    </select>
+                                                    <span class="form-text text-muted">Por favor Selecciona
+                                                        Categoria del Servicio que Solicita.</span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Fracción del Servicio que Solicita:
+                                                    <span style="color:red;">*</span></label>
+                                                <div class="col-10">
+
+                                                    <select class="form-control kt-select2" id="select-fraccion"
+                                                        style="width: 100%" name="servicio"
+                                                        required>
+                                                        <option value="">Seleccione el Servicio</option>
+
+                                                    </select>
+                                                    <span class="form-text text-muted">Por favor selecciona fracción del
+                                                        servicio que solicita.</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                
+                                                <div class="col-12">
+                                                        <label for="example-text-input"
+                                                        class=" col-form-label">Descripción:</label>
+                                                     <textarea class="form-control" rows="12" id="descripcion_id" name="descripcion" onchange="mayus(this);"></textarea>
+                                                    <span class="form-text text-muted">Por favor ingresa una
+                                                        descripción clara y concisa.</span>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group row">
+                                                   
+                                                <div class="col-12">
+                                                        <label class=" col-form-label">Agregar evidencia(imagenes, pdf, audios,etc):</label>
+                                                        <div class="dropzone">
+
+                                                            </div>
+                                                
+                                                </div>
+                                            </div>
+
+
+                                            
+
+                                            
 
 
                                             <div class="kt-portlet__foot">
@@ -587,10 +690,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="col-md-4 btn-lg">
                                                             <button type="submit" class="btn btn-success"
                                                                 id="kt_sweetalert_demo_3_3">Enviar Formulario</button>
-
-
-
-
                                                         </div>
                                                         <div class="col-md-4">
 
@@ -848,8 +947,8 @@ function onSelectAreaCambio(){
     var area_json= JSON.parse(area)
     var area_id =area_json.id;
    
-    $.get('/api/servicios/1',function(data){
-        var html_select='<option value"">Seleccione un servicio</option>'
+    $.get('/api/servicios/'+area_id,function(data){
+        var html_select='<option value"">Seleccione un servicio</option>';
         for (let index = 0; index < data.length; index++) {
            
            html_select+='<option value="'+data[index].id+'">'+data[index].nombre+'</option>'
@@ -887,18 +986,102 @@ $('#kt-select-municipio, #kt_select2_3_validate').select2({
         placeholder: "Selecciona una Nacioanlidad",
   });
 
-  $('#kt-select-area, #kt_select2_3_validate').select2({
-        placeholder: "Selecciona Area del Servicio que se Solcita",
-  });
+  $('#kt-select-area').select2({
+            placeholder: "Selecciona una Area del Servicio que Solicita",
+            allowClear: true
+        });
 
   $('#select-servicio, #kt_select2_3_validate').select2({
         placeholder: "Selecciona Area del Servicio que se Solcita",
   });
 
 
+  $('#kt-grupo-vulnerable, #kt_select2_3_validate').select2({
+        placeholder: "Selecciona Grupos Vunerables",
+  });
+
+  $('#kt-categoria').select2({
+            placeholder: "Selecciona una categoria del Servicio que Solicita",
+            allowClear: true
+        });
+
+$('#kt-ley').select2({
+    placeholder: "Selecciona una Ley del Servicio que Solicita",
+    allowClear: true
+       });
 
 
+$('#select-fraccion').select2({
+    placeholder: "Selecciona una Fraccion del Servicio que Solicita",
+    allowClear: true
+});
+
+
+$(function() {
+    $('#kt-ley').on('change',onSelectCategoriaCambio);
+});
+
+
+    
+
+$(function() {
+    $('#kt-categoria').on('change',onSelectCategoriaCambio);
+});
+
+
+
+
+function onSelectCategoriaCambio(){
+    var ley= $(this).val();
+    var ley_json= JSON.parse(ley)
+    var ley_id =ley_json.id;
+    //
+    var categoria= $(this).val();
+    var categoria_json= JSON.parse(categoria)
+    var categoria_id =categoria_json.id;
+    var html_select='';
+    
+    $.get('/api/fracciones/'+ley_id+'/'+categoria_id,function(data){
+        console.log(data);
+       if(data.length > 0) {
+        for (let index = 0; index < data.length; index++) {
+           html_select+='<option value="'+data[index].id+'">'+data[index].nombre+'</option>'
+            $('#select-fraccion').html(html_select);
+           
+        }
+       }
+        else { 
+           
+            $('#select-fraccion').html(html_select);
+        }
+    });
+
+
+}
+
+/////////////////
+
+
+var myDropzone = new Dropzone('.dropzone', {
+    url: '/',
+    acceptedFiles:'image/*,.mp3,.mp4,application/pdf,.psd,.zip,.rar',
+    maxFilesize: 7,
+    maxFiles: 12,
+    paramName: 'evidencia',
+    headers: {
+        'X-CSRF-TOKEN': '{{csrf_token()}}'
+    },
+    dictDefaultMessage: 'Arrastra  las fotos aqui para subirlas'
+    });
+
+    myDropzone.on('error', function(file,res){
+        var msg= res.errors.evidencia[0];
+        $('.dz-error-message:last >span').text(msg);
+    });
+    Dropzone.autoDiscover = false;
 </script>
+
+
 
 
 </html>
