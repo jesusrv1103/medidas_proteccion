@@ -58,7 +58,7 @@
 
         <tr>
             <td>Hora: </td>
-            <td>{{$request->hora}}  </td>
+            <td>12:45 </td>
         </tr>
 
 
@@ -82,13 +82,13 @@
         </tr>
         <tr>
             <td> Nombre: </td>
-            <td>{{$request->nombre_involucrado}}</td>
+            <td>JUAN RAMIREZ GARCIA</td>
         </tr>
 
 
         <tr>
             <td> Edad: </td>
-            <td>{{$request->edad}} </td>
+            <td>45 </td>
         </tr>
 
         <tr>
@@ -98,13 +98,13 @@
 
         <tr>
             <td> Nacionalidad: </td>
-            <td>{{json_decode($request->input('nacionalidad'))->nombre}} </td>
+            <td>MEXICANA</td>
         </tr>
 
 
         <tr>
             <td> Ocupacion: </td>
-            <td>{{json_decode($request->input('ocupacion'))->nombre}} </td>
+            <td>CARPINTERO </td>
         </tr>
 
         <tr>
@@ -120,7 +120,7 @@
 
         <tr>
             <td>Telefono: </td>
-            <td>{{$request->telefono}}</td>
+            <td>4991054545</td>
         </tr>
 
         <tr>
@@ -131,23 +131,10 @@
 
      
             <td>Correo electrónico: </td>
-            <td>{{$request->correo_involucrado}}</td>
+            <td>jesus21c@hotmail.com</td>
         </tr>
 
-        <tr>
-            <td>Delito: </td>
-            <td>{{json_decode($request->input('delito'))->nombre}} </td>
-        </tr>
 
-        <tr>
-            <td>Area del servicio que solicita: </td>
-            <td>{{json_decode($request->input('area'))->nombre}} </td>
-        </tr>
-
-        <tr>
-            <td>Servicio que solicita: </td>
-            <td>{{$request->nombre_servicio}} </td>
-        </tr>
         
         
        

@@ -396,23 +396,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                          
 
 
-                                            <div class="form-group row">
-                                                <label class="col-2 col-form-label">Tipo de Usuario que solicita: <span
-                                                        style="color:red;">*</span></label>
-                                                <div class="col-10">
-                                                    <select class="form-control kt-select2" id="kt_select2_3"
-                                                        id="municipio_id" style="width: 100%" name="usuario" required>
-                                                        <option value="">Seleccione un tipo de usuario</option>
-                                                        @foreach ($usuarios as $usuario)
-                                                        <option value="{{$usuario}}">
-                                                            {{$usuario->nombre}}</option>
-                                                        @endforeach
-
-                                                    </select>
-                                                    <span class="form-text text-muted">Por favor selecciona
-                                                        tipo de usuario.</span>
-                                                </div>
-                                            </div>
+                                         
                                             
                                             <div class="form-group form-group-last">
                                                 <div class="alert alert-secondary" role="alert">
@@ -456,6 +440,24 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <span class="form-text text-muted">
                                                         Por favor ingrese domicilio de la víctima, testigo o diversa
                                                         persona que intervenga en el proceso penal.</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Tipo de Usuario que solicita: <span
+                                                        style="color:red;">*</span></label>
+                                                <div class="col-10">
+                                                    <select class="form-control kt-select2" id="kt_select2_3"
+                                                        id="municipio_id" style="width: 100%" name="usuario" required>
+                                                        <option value="">Seleccione un tipo de usuario</option>
+                                                        @foreach ($usuarios as $usuario)
+                                                        <option value="{{$usuario}}">
+                                                            {{$usuario->nombre}}</option>
+                                                        @endforeach
+
+                                                    </select>
+                                                    <span class="form-text text-muted">Por favor selecciona
+                                                        tipo de usuario.</span>
                                                 </div>
                                             </div>
 
