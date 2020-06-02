@@ -274,6 +274,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
+                                            <input type="hidden" class="form-control" value="{{($ultimoIdMedida->id)+1}}" name="medida_id"/>
+
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-2 col-form-label">Causa
                                                     Penal: </label>
@@ -565,8 +567,21 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
                                             <div class="form-group row">
+                                                <label for="example-text-input" class="col-2 col-form-label">Nombre:
+                                                   </label>
+                                                <div class="col-10">
+                                                    <input type="text" class="form-control" name="nombre_persona_confianza"
+                                                        required onchange="mayus(this);">
+                                                    <span class="form-text text-muted">
+                                                        Por favor ingrese Nombre de la víctima, testigo o diversa
+                                                        persona que intervenga en el proceso penal.</span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
                                                 <label for="example-text-input" class="col-2 col-form-label">Telefono
-                                                    Persona de confianza: <span style="color:red;">*</span></label>
+                                                    Persona de confianza:</label>
                                                 <div class="col-10">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend"><span
@@ -586,15 +601,14 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-
-
+                                        
 
 
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-2 col-form-label">Domicilio  Persona de confianza:
-                                                    <span style="color:red;">*</span></label>
+                                                    </label>
                                                 <div class="col-10">
-                                                    <input type="text" class="form-control" name="domicili_confianza"
+                                                    <input type="text" class="form-control" name="domicilio_confianza"
                                                         required onchange="mayus(this);">
                                                     <span class="form-text text-muted">
                                                     Por favor ingrese Domicilio de
@@ -647,7 +661,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <select class="form-control kt-select2" id="select-servicio"
-                                                        multiple="multiple" style="width: 100%" name="servicio"
+                                                        multiple="multiple" style="width: 100%" name="servicio[]"
                                                         required>
                                                         <option value="">Seleccione el Servicio</option>
 
@@ -705,7 +719,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <select class="form-control kt-select2" id="select-fraccion"
-                                                        style="width: 100%" name="fraccionServicio[]"
+                                                        style="width: 100%" name="fraccionServicio"
                                                         required>
                                                         <option value="">Seleccione el Servicio</option>
 
@@ -888,7 +902,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="/assets/vendors/general/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
     <script src="/assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript">
     </script>
-    <script src="/assets/vendors/general/bootstrap-maxlength/src/bootstrap-maxlength.js" type="text/javascript">
+    <script src="/assets/vendors/general/boo;
+    tstrap-maxlength/src/bootstrap-maxlength.js" type="text/javascript">
     </script>
     <script src="/assets/vendors/custom/vendors/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js"
         type="text/javascript"></script>
@@ -1131,7 +1146,7 @@ function onSelectCategoriaCambio(){
 
 
 var myDropzone = new Dropzone('.dropzone', {
-    url: '/',
+    url: '/api/medidasdeproteccion/{{($ultimoIdMedida->id)+1}}/evidencia',
     acceptedFiles:'image/*,.mp3,.mp4,application/pdf,.psd,.zip,.rar',
     maxFilesize: 7,
     maxFiles: 12,

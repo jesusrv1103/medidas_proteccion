@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEvidenciaMedidasDeProteccionTable extends Migration
+class CreateMedidasProteccionDescripcionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateEvidenciaMedidasDeProteccionTable extends Migration
      */
     public function up()
     {
-        Schema::create('evidencia_medidas_de_proteccion', function (Blueprint $table) {
+        Schema::create('medidas_proteccion_descripcion', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('imagen');
             $table->BigInteger('medida_de_proteccion_id')->unsigned();
-       //     $table->foreign('medida_de_proteccion_id')->references('id')->on('medidas_de_proteccion');
+            $table->foreign('medida_de_proteccion_id')->references('id')->on('medidas_de_proteccion');
+            $table->text('descripcion')->nullable($value = true);
             $table->timestamps();
-
         });
     }
 
@@ -30,6 +29,6 @@ class CreateEvidenciaMedidasDeProteccionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('evidencia_medida_proteccion');
+        Schema::dropIfExists('medidas_proteccion_descripcion');
     }
 }

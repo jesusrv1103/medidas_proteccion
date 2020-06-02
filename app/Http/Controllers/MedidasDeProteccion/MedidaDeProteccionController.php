@@ -19,8 +19,18 @@ use App\Admin\Usuario;
 use Mail;
 use App\Mail\MedidaDeProteccionRecibida;
 
-Use App\MedidasDeProteccion\MedidaDeProteccion;
-Use App\MedidasDeProteccion\Testigo;
+use App\MedidasDeProteccion\MedidaDeProteccion;
+use App\MedidasDeProteccion\Testigo;
+use App\MedidasDeProteccion\PesonaDeConfianza;
+use App\MedidasDeProteccion\MedidaProteccionDescripcion;
+use App\MedidasDeProteccion\PersonaDeConfianza;
+use App\MedidasDeProteccion\GVulnerableMProteccion;
+use App\MedidasDeProteccion\CrimenesMedidaDeProteccion;
+use App\MedidasDeProteccion\ServicioMedidaDeProteccion;
+
+
+use DB;
+
 
 class MedidaDeProteccionController extends Controller
 {
@@ -36,6 +46,8 @@ class MedidaDeProteccionController extends Controller
         $grupos_vulnerables=GrupoVulnerable::get();
         $leyes=LeyesDeProteccion::get();
         $categorias= CategoriasLeyDeProteccion::get();
+
+        $ultimoIdMedida = MedidaDeProteccion::latest('id')->first();
         return view('MedidasDeProteccion.medidaProteccion',
         compact(
             'areasServicio',
@@ -48,7 +60,8 @@ class MedidaDeProteccionController extends Controller
             'usuarios',
             'grupos_vulnerables',
             'categorias',
-            'leyes'
+            'leyes',
+            'ultimoIdMedida'
         ));
     }
 
@@ -59,6 +72,8 @@ class MedidaDeProteccionController extends Controller
     public function store(Request $request)
     {
 
+
+        DB::beginTransaction();
         $medida_proteccion= new MedidaDeProteccion;
         $medida_proteccion->carpeta= $request->carpeta;
         $medida_proteccion->causa_penal= $request->causaPenal;
@@ -67,38 +82,74 @@ class MedidaDeProteccionController extends Controller
         $medida_proteccion->fiscal= $request->fiscal;
         $medida_proteccion->fecha= $request->fecha_carpeta;
         $medida_proteccion->hora= $request->hora;
-        $medida_proteccion->solicitante= $request->solcitante;
+        $medida_proteccion->solicitante= $request->solicitante;
         $medida_proteccion->save();
+        $idMedidaProteccion=$medida_proteccion->id;
 
         $testigo = new Testigo;
         $testigo->nombre=$request->nombre_involucrado;
-        $testigo->edad
-        $testigo->nacionalidad_id
-        $testigo->ocupacion_id
-        $testigo->correo
-        $testigo->domicilio
-        $testigo->usuario_id
-        $testigo->nacionalidad
-        $testigo->ocupacion
-        $testigo->telefono
-        $telefono->correo=
+        $testigo->edad=$request->edad;
+        $testigo->nacionalidad_id=(json_decode($request->input('nacionalidad'))->id);
+        $testigo->ocupacion_id=(json_decode($request->input('ocupacion'))->id);;
+        $testigo->domicilio=$request->domicilio_testigo;
+        $testigo->usuario_id=(json_decode($request->input('usuario'))->id);
+        $testigo->correo=$request->correo_involucrado;
+        $testigo->medida_de_proteccion_id=$idMedidaProteccion;
+        $testigo->save();
+
+        $persona_confianza= new PersonaDeConfianza;
+        $persona_confianza->nombre=$request->nombre_persona_confianza;
+        $persona_confianza->telefono=$request->telefono_confianza;
+        $persona_confianza->domicilio=$request->domicilo_confianza;
+        $persona_confianza->medida_de_proteccion_id=$idMedidaProteccion;
+        $persona_confianza->save();
+
+        $medida_descripcion = new MedidaProteccionDescripcion;
+        $medida_descripcion->medida_de_proteccion_id=$idMedidaProteccion;
+        $medida_descripcion->descripcion = $request->descripcion;
+        $medida_descripcion->save();
+
+        $cont=0;
+        $gruposVulnerables=$request->input('gruposVulnerables');
+        while($cont< count($request->input('gruposVulnerables')))
+        {
+            $medida_gvulnerable=new GVulnerableMProteccion;
+            $medida_gvulnerable->medida_de_proteccion_id=$idMedidaProteccion;
+            $medida_gvulnerable->grupo_vulnerable_id= json_decode($gruposVulnerables[$cont])->id;
+            $medida_gvulnerable->save();
+            $cont=$cont+1; 
+        }
+
+        $cont=0;
+        $cont1=0;
+        $cont2=0;
+        $gruposVulnerables=$request->input('gruposVulnerables');
+        $delitos=$request->input('delito');
+        $servicios=$request->get('servicio');
 
 
-
-
-
-
-      
-        return $request;
-    /*
-       Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
-       return redirect()->back()->with('flash', 
-       'Su informacion ha sido recibida, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');
-      */
+       // return count($servicios);
        
+        while($cont2< count($servicios))
+        {
+            $medida_servicios=new ServicioMedidaDeProteccion;
+            $medida_servicios->medida_de_proteccion_id=$idMedidaProteccion;
+            $medida_servicios->servicio_id= $servicios[$cont2];
+            $medida_servicios->save();
+            $cont2=$cont2+1; 
+        }
+        
+        DB::commit();
+
+        Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
+        return redirect()->back()->with('flash', 
+        'Su informacion ha sido recibida, personal de la Fiscalía se pondrá en
+         contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');
+
+        
 
 
-      // return  view('MedidasDeProteccionRecibida',compact('request'));
+
     
       
     }

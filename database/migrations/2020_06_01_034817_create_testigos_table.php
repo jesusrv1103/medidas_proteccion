@@ -22,9 +22,11 @@ class CreateTestigosTable extends Migration
             $table->BigInteger('ocupacion_id')->unsigned();
             $table->foreign('ocupacion_id')->references('id')->on('ocupaciones');
             $table->string('correo')->nullable($value = true);
-            $table->string('domiclio');
+            $table->string('domicilio');
             $table->BigInteger('usuario_id')->unsigned();
             $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->BigInteger('medida_de_proteccion_id')->unsigned();
+            $table->foreign('medida_de_proteccion_id')->references('id')->on('medidas_de_proteccion');
             $table->timestamps();
         });
     }

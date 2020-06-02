@@ -24,7 +24,7 @@ class CreateMedidasDeProteccionTable extends Migration
             $table->string("fiscal");
             $table->date("fecha");
             $table->time("hora");
-            $table->string("solcitante");
+            $table->string("solicitante");
             $table->timestamps();
         });
     }

@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class EvidenciaMedidaProteccion extends Model
 {
-    protected $table="evidencia_medida_proteccion";
+
+    protected $guarded = [];
+    protected $table="evidencia_medidas_de_proteccion";
 }
