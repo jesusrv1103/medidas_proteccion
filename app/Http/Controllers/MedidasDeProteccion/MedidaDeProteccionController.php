@@ -71,7 +71,7 @@ class MedidaDeProteccionController extends Controller
         $medida_proteccion->save();
 
         $testigo = new Testigo;
-        $testigo->nombre
+        $testigo->nombre=$request->nombre_involucrado;
         $testigo->edad
         $testigo->nacionalidad_id
         $testigo->ocupacion_id
