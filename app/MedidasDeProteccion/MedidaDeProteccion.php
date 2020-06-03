@@ -12,6 +12,7 @@ use App\Admin\Servicio;
 use App\Admin\AreaServicio;
 
 use App\MedidasDeProteccion\PersonaDeConfianza;
+use App\MedidasDeProteccion\SeguimientoMedidaProteccion;
 
 class MedidaDeProteccion extends Model
 {
@@ -64,6 +65,15 @@ class MedidaDeProteccion extends Model
       
     }
 
+
+
+    public function seguimiento()
+    {
+        return $this->hasOne(SeguimientoMedidaProteccion::class, 'medida_de_proteccion_id', 'id');
+    }
+
+
+  
 
   
 

@@ -12,8 +12,12 @@
                 <i class="kt-menu__section-icon flaticon-more-v2"></i>
             </li>
 
-            <li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon 
-                flaticon-email"></i><span class="kt-menu__link-text">Medidas de Proteccion</span></a></li>
+            <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('medidas.proteccion.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon 
+                flaticon-email"></i><span class="kt-menu__link-text">Solicitudes de Medidas de Proteccion</span></a></li>
+
+
+                <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('seguimiento.proteccion.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon 
+                flaticon-email"></i><span class="kt-menu__link-text">Medidas de Proteccion Aceptadas</span></a></li>
 
             <li class="kt-menu__section ">
                 <h4 class="kt-menu__section-text">USUARIOS</h4>

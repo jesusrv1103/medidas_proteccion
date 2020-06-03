@@ -18,7 +18,7 @@ use App\Admin\Servicio;
 use App\Admin\Usuario;
 use Mail;
 use App\Mail\MedidaDeProteccionRecibida;
-
+use Illuminate\Support\Carbon;
 use App\MedidasDeProteccion\MedidaDeProteccion;
 use App\MedidasDeProteccion\Testigo;
 use App\MedidasDeProteccion\PesonaDeConfianza;
@@ -41,7 +41,8 @@ class MedidaDeProteccionController extends Controller
     public function index(){
 
         $medidas_de_proteccion=MedidaDeProteccion::
-        where('id','>',1)
+        where('aceptada','=',0)
+        ->where('id','>',1)
         ->get();
         return view('MedidasDeProteccion.index',
         compact('medidas_de_proteccion'));  
@@ -195,7 +196,7 @@ class MedidaDeProteccionController extends Controller
             compact('medida_de_proteccion','evidencias'));
     }
 
-    public function seguimiento(){
+    public function seguimiento($id){
 
         $areasServicio=AreaServicio::get();
         $crimenes=Crimen::get();
@@ -222,7 +223,8 @@ class MedidaDeProteccionController extends Controller
             'usuarios',
             'grupos_vulnerables',
             'categorias',
-            'leyes'
+            'leyes',
+            'id'
         ));
       }
 }

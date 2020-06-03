@@ -29,6 +29,7 @@ class CreateMedidasDeProteccionTable extends Migration
             $table->foreign('testigo_id')->references('id')->on('testigos');
             $table->BigInteger('persona_confianza_id')->unsigned();
             $table->foreign('persona_confianza_id')->references('id')->on('personas_de_confianza');
+            $table->boolean('aceptada')->default(0);
             $table->timestamps();
         });
     }
