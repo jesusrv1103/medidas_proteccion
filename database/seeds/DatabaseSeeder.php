@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FraccionTableSeeder::class);
         $this->call(GrupoVulnerableTableSeeder::class);
         $this->call(TestigoTableSeeder::class);
+        $this->call(PersonaDeConfianzaTableSeeder::class);
         $this->call(MedidaDeProteccionTableSeeder::class);
 
         

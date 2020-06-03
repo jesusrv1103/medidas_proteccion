@@ -4,14 +4,14 @@
     <div class="kt-container  kt-container--fluid ">
         <div class="kt-subheader__main">
             <h3 class="kt-subheader__title">
-                Medidas de Proteccion
+                Medidas de Protección
             </h3>
             <span class="kt-subheader__separator kt-hidden"></span>
             <div class="kt-subheader__breadcrumbs">
                 <a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
                 <span class="kt-subheader__breadcrumbs-separator"></span>
                 <a href="" class="kt-subheader__breadcrumbs-link">
-                   Medida de Proteccion</a>
+                   Medida de Protección</a>
 
                 <!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
             </div>
@@ -32,7 +32,7 @@
 										<div class="kt-portlet__head">
 											<div class="kt-portlet__head-label">
 												<h3 class="kt-portlet__head-title">
-													Seguimiento Medida de Proteccion
+													Seguimiento Medida de Protección
 												</h3>
 											</div>
 										</div>
@@ -182,7 +182,7 @@
                                                     <div class="alert-icon"><i
                                                             class="flaticon-avatar kt-font-brand"></i></div>
                                                     <div class="alert-text">
-                                                        <h2>Audiencia Judicial de Rtificacion de Medida </h2>
+                                                        <h2>Audiencia Judicial de Ratificación de Medida </h2>
                                                     </div>
                                                 </div>
 

@@ -22,6 +22,7 @@ class MedidaDeProteccionTableSeeder extends Seeder
             'fecha' => '2010/12/09',
             'hora' => '10:23',
             'testigo_id'=>1,
+            'persona_confianza_id' =>1,
         ]);
     }
 }
