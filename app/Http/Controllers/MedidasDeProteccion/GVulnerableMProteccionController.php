@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 
 class GVulnerableMProteccionController extends Controller
 {
-    protected $table="g_vulnerable_m_proteccion";
+   
 }
 

@@ -673,65 +673,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-{{--                                       
-
-                                            <div class="form-group row">
-                                                <label class="col-2 col-form-label">Ley del Servicio que Solicita:
-                                                    <span style="color:red;">*</span></label>
-                                                <div class="col-10">
-                                                    <select class="form-control kt-select2" id="kt-ley"
-                                                        style="width: 100%" name="leyServicio[]" required>
-                                                        <option></option>
-                                                        @foreach ($leyes as $ley)
-                                                        <option value="{{$ley}}">
-                                                            {{$ley->nombre}}</option>
-                                                        @endforeach
-
-                                                    </select>
-                                                    <span class="form-text text-muted">Por favor Selecciona
-                                                        Categoria del Servicio que Solicita.</span>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group row">
-                                                <label class="col-2 col-form-label">Categoria del Servicio que Solicita:
-                                                    <span style="color:red;">*</span></label>
-                                                <div class="col-10">
-                                                    <select class="form-control kt-select2" id="kt-categoria"
-                                                        style="width: 100%" name="categoriaServicio[]" required>
-                                                        <option></option>
-                                                        @foreach ($categorias as $categoria)
-                                                        <option value="{{$categoria}}">
-                                                            {{$categoria->nombre}}</option>
-                                                        @endforeach
-
-                                                    </select>
-                                                    <span class="form-text text-muted">Por favor Selecciona
-                                                        Categoria del Servicio que Solicita.</span>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group row">
-                                                <label class="col-2 col-form-label">Fracción del Servicio que Solicita:
-                                                    <span style="color:red;">*</span></label>
-                                                <div class="col-10">
-
-                                                    <select class="form-control kt-select2" id="select-fraccion"
-                                                        style="width: 100%" name="fraccionServicio"
-                                                        required>
-                                                        <option value="">Seleccione el Servicio</option>
-
-                                                    </select>
-                                                    <span class="form-text text-muted">Por favor selecciona fracción del
-                                                        servicio que solicita.</span>
-                                                </div>
-                                            </div>
-
-
-                                            --}}
-
                                             <div class="form-group row">
                                                 
                                                 <div class="col-12">

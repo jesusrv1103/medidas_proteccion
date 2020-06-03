@@ -203,7 +203,7 @@
                                 <strong>Telefono : </strong>
                             </span>
                             <span class="kt-widget13__text kt-widget13__text--bold">
-                                4991058737
+                                {{$medida_de_proteccion->testigo->telefono}}
                             </span>
                         </div>
 
@@ -213,7 +213,7 @@
                                 <strong>Correo Electronico : </strong>
                             </span>
                             <span class="kt-widget13__text kt-widget13__text--bold">
-                                maria@gmail.com
+                              {{$medida_de_proteccion->testigo->correo}}
                             </span>
                         </div>
 
@@ -223,13 +223,21 @@
                             <h3>Datos de Persona de Confianza</h3>
                         </span>
 
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Nombre: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                    {{$medida_de_proteccion->persona_confianza->nombre}}
+                            </span>
+                        </div>
 
                         <div class="kt-widget13__item">
                             <span class="kt-widget13__desc">
                                 <strong>Telefono: </strong>
                             </span>
                             <span class="kt-widget13__text kt-widget13__text--bold">
-                                4571072456
+                            {{$medida_de_proteccion->persona_confianza->telefono}}
                             </span>
                         </div>
 
@@ -239,7 +247,7 @@
                                 <strong>Domicilio: </strong>
                             </span>
                             <span class="kt-widget13__text kt-widget13__text--bold">
-                                VILLANUEVA ZACATECAS CALLE EMILIANO ZAPATA 23
+                            {{$medida_de_proteccion->persona_confianza->domicilio}}
                             </span>
                         </div>
 
@@ -255,7 +263,9 @@
                                 <strong>Area del servicio que solicita </strong>
                             </span>
                             <span class="kt-widget13__text kt-widget13__text--bold">
-                                AREA DE TRABAJO SOCIAL
+                            {{$medida_de_proteccion->area_servicio(1)->nombre}}
+
+                          
                             </span>
                         </div>
 
@@ -264,8 +274,12 @@
                             <span class="kt-widget13__desc">
                                 <strong>Servicios: </strong>
                             </span>
+                            <br>
                             <span class="kt-widget13__text kt-widget13__text--bold">
-                                REALIZACIÓN DE ESTUDIO SOCIAL
+                                @foreach($medida_de_proteccion->servicios_solicita as $servicio)
+                                {{$servicio->nombre}}
+                                <br>
+                                @endforeach
                                 <br>
                             </span>
                         </div>
@@ -278,7 +292,7 @@
 
 
                         <p>
-                            
+                              {{$medida_de_proteccion->solicitante}}
                         </p>
 
 
@@ -297,54 +311,123 @@
 
                 <div class="kt-invoice__container">
 
-                    <span>
-                        <h3>Evidencia</h3>
-                    </span>
+                        <span>
+                            <h3>Evidencia</h3>
+                        </span>
+                        @php
+                        $contPDF=0;
+                        $contIMG=0;
+                        $contMP4=0;
 
-                    <h5>La evidencia cuenta con
-                        2 imagenes
-                    </h5>
+                        @endphp
+                        @foreach ($evidencias as $evidencia)
+                        @php
+                        $ext = strtolower(pathinfo(storage_path('app/'.$evidencia->imagen), PATHINFO_EXTENSION));
+                        @endphp
+                        @if ($ext=="jpg" || $ext=="jpeg" || $ext=="png" || $ext=="gif")
 
+                        @php
+                        $contIMG=$contIMG+1;
+                        @endphp
 
-                    <img src="/assets/media/blog/blog1.jpg" width="200px">
+                        @elseif($ext=="pdf" )
+                        @php
+                        $contPDF=$contPDF+1;
+                        @endphp
 
-                    <img src="/assets//media/blog/blog2.jpg" width="200px">
-
-
-
-                    <h5>La evidencia cuenta con
-                        1 archivos pdf
-                    </h5>
-
-
-
-                    <a target="_blank" href="https://archivos.juridicas.unam.mx/www/bjv/libros/9/4032/4.pdf" class="btn btn-light-success">
-                        <i class="flaticon-doc"></i>
-                        Ver archivo 1
-
-
-                    </a>
-
-
-
+                        @elseif($ext=="mp4" )
+                        @php
+                        $contMP4=$contPDF+1;
+                        @endphp
 
 
+                        @endif
+
+                        @endforeach
+
+                        @php
+                        $url="";
+                        @endphp
+                        <h5>La evidencia cuenta con
+                            @php
+                            echo $contIMG;
+                            @endphp imagenes
+                        </h5>
+                        @foreach ($evidencias as $evidencia)
+                        @php
+                        $url = str_replace("public", "", $evidencia->imagen);
+                        $ext = strtolower(pathinfo(storage_path('app/'.$evidencia->imagen), PATHINFO_EXTENSION));
+                        @endphp
+                        @if ($ext=="jpg" || $ext=="jpeg" || $ext=="png" || $ext=="gif")
+
+                        <img style="padding:  20px 20px;" src="{{ asset('storage'.$url)}}" width="200px" height="200px">
+
+                        @endif
+                        @endforeach
+
+                        @php
+                        $url="";
+                        @endphp
+                        <h5>La evidencia cuenta con
+                            @php
+                            echo $contPDF;
+                            @endphp archivos pdf
+                        </h5>
+                        @foreach ($evidencias as $evidencia)
+                        @php
+                        $url = str_replace("public", "", $evidencia->imagen);
+                        $ext = strtolower(pathinfo(storage_path('app/'.$evidencia->imagen), PATHINFO_EXTENSION));
+                        $contador=0;
+                        @endphp
+                        @if ($ext=="pdf" )
+                        @php
+                        $contador=$contador+1;
+                        @endphp
+
+
+                        <a target="_blank" href="{{ asset('storage'.$url)}}" class="btn btn-light-success">
+                            <i class="flaticon-doc"></i>
+                            Ver archivo
+
+                            @php
+                            echo $contador;
+                            @endphp
+                        </a>
 
 
 
 
-                    <h5>La evidencia cuenta con
-                        1 video(s)
-                    </h5>
 
 
 
 
-                    <video width="320" height="240" controls>
-                        <source src="https://youtu.be/yAoLSRbwxL8" type="video/mp4" controls>
-                        <source src="movie.ogg" type="video/ogg">
-                        Your browser does not support the video tag.
-                    </video>
+                        @endif
+                        @endforeach
+
+
+                        @php
+                        $url="";
+                        @endphp
+                        <h5>La evidencia cuenta con
+                            @php
+                            echo $contMP4;
+                            @endphp videos
+                        </h5>
+                        @foreach ($evidencias as $evidencia)
+                        @php
+                        $url = str_replace("public", "", $evidencia->imagen);
+                        $ext = strtolower(pathinfo(storage_path('app/'.$evidencia->imagen), PATHINFO_EXTENSION));
+                        $contador=0;
+                        @endphp
+                        @if ($ext=="mp4" )
+
+
+
+                        <video width="320" height="240"  controls>
+                            <source src="{{ asset('storage'.$url)}}" type="video/mp4" controls>
+                            <source src="movie.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
 
 
 
@@ -352,9 +435,11 @@
 
 
 
+                        @endif
+                        @endforeach
 
+</div>
 
-                </div>
 
 
 

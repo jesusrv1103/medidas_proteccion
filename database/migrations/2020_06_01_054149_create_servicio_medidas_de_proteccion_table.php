@@ -19,6 +19,8 @@ class CreateServicioMedidasDeProteccionTable extends Migration
             $table->foreign('medida_de_proteccion_id')->references('id')->on('medidas_de_proteccion');
             $table->BigInteger('servicio_id')->unsigned();
             $table->foreign('servicio_id')->references('id')->on('servicios');
+
+           
             $table->timestamps();
         });
     }

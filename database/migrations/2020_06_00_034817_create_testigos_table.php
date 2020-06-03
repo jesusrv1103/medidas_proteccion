@@ -22,6 +22,7 @@ class CreateTestigosTable extends Migration
             $table->BigInteger('ocupacion_id')->unsigned();
             $table->foreign('ocupacion_id')->references('id')->on('ocupaciones');
             $table->string('correo')->nullable($value = true);
+            $table->string('telefono')->nullable($value = true);
             $table->string('domicilio');
             $table->BigInteger('usuario_id')->unsigned();
             $table->foreign('usuario_id')->references('id')->on('usuarios');
