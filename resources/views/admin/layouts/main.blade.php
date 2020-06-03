@@ -33,7 +33,7 @@
     <!--end::Page Vendors Styles -->
 
     <!--begin:: Global Mandatory Vendors -->
-    <link href="./assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"
+    <link href="/assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"
         type="text/css" />
 
     <!--end:: Global Mandatory Vendors -->
@@ -78,15 +78,15 @@
     <!--end:: Global Optional Vendors -->
 
     <!--begin::Global Theme Styles(used by all pages) -->
-    <link href="./assets/css/demo1/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/demo1/style.bundle.css" rel="stylesheet" type="text/css" />
 
     <!--end::Global Theme Styles -->
 
     <!--begin::Layout Skins(used by all pages) -->
-    <link href="./assets/css/demo1/skins/header/base/light.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/demo1/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/demo1/skins/brand/dark.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/demo1/skins/aside/dark.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/demo1/skins/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/demo1/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/demo1/skins/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/demo1/skins/aside/dark.css" rel="stylesheet" type="text/css" />
 
     <!--end::Layout Skins -->
     <link rel="shortcut icon" href="/assets/logos_fiscalia/appbanner_black70x20.png" />
@@ -192,12 +192,12 @@
 @push('styles')
 
 <!--begin::Page Vendors Styles(used by this page) -->
-<link href="./assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+<link href="/assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 
 @endpush
 @push('scripts')
 
-<script src="./assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
+<script src="/assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
 <script src="/assets/js/demo1/pages/crud/forms/validation/form-controls.js" type="text/javascript"></script>
 <script src="/assets/js/demo1/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>
 <script src="/assets/js/demo1/pages/crud/forms/widgets/dropzone.js" type="text/javascript"></script>
@@ -320,20 +320,20 @@
     <!--end:: Global Optional Vendors -->
 
     <!--begin::Global Theme Bundle(used by all pages) -->
-    <script src="./assets/js/demo1/scripts.bundle.js" type="text/javascript"></script>
+    <script src="/assets/js/demo1/scripts.bundle.js" type="text/javascript"></script>
 
     <!--end::Global Theme Bundle -->
 
     <!--begin::Page Vendors(used by this page) -->
-    <script src="./assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
+    <script src="/assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
     <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript">
     </script>
-    <script src="./assets/vendors/custom/gmaps/gmaps.js" type="text/javascript"></script>
+    <script src="/assets/vendors/custom/gmaps/gmaps.js" type="text/javascript"></script>
 
     <!--end::Page Vendors -->
 
     <!--begin::Page Scripts(used by this page) -->
-    <script src="./assets/js/demo1/pages/dashboard.js" type="text/javascript"></script>
+    <script src="/assets/js/demo1/pages/dashboard.js" type="text/javascript"></script>
 
     
 

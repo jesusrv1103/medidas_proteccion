@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGVulnerableMProteccionTable extends Migration
+class CreateTestigoGruposVulnerablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateGVulnerableMProteccionTable extends Migration
      */
     public function up()
     {
-        Schema::create('g_vulnerable_m_proteccion', function (Blueprint $table) {
+        Schema::create('testigo_grupos_vulnerables', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->BigInteger('medida_de_proteccion_id')->unsigned();
-            $table->foreign('medida_de_proteccion_id')->references('id')->on('medidas_de_proteccion');
+            $table->BigInteger('testigo_id')->unsigned();
+            $table->foreign('testigo_id')->references('id')->on('testigos');
             $table->BigInteger('grupo_vulnerable_id')->unsigned();
             $table->foreign('grupo_vulnerable_id')->references('id')->on('grupos_vulnerables');
             $table->timestamps();
@@ -30,6 +30,6 @@ class CreateGVulnerableMProteccionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('g_vulnerable_m_proteccion');
+        Schema::dropIfExists('testigo_grupos_vulnerables');
     }
 }

@@ -21,7 +21,7 @@ Route::post('/', 'MedidasDeProteccion\MedidaDeProteccionController@store')->name
 
 Route::get('medidasproteccion', 'MedidasDeProteccion\MedidaDeProteccionController@index')->name('medidas.proteccion.index');
 
-Route::get('medidasproteccion/detalles', 'MedidasDeProteccion\MedidaDeProteccionController@show')->name('medidas.proteccion.detalles');
+Route::get('medidasproteccion/{id}/detalles', 'MedidasDeProteccion\MedidaDeProteccionController@show')->name('medidas.proteccion.detalles');
 
 Route::get('medidasproteccion/seguimiento', 'MedidasDeProteccion\MedidaDeProteccionController@seguimiento')->name('medidas.proteccion.seguimiento');
 

@@ -24,7 +24,7 @@ use App\MedidasDeProteccion\Testigo;
 use App\MedidasDeProteccion\PesonaDeConfianza;
 use App\MedidasDeProteccion\MedidaProteccionDescripcion;
 use App\MedidasDeProteccion\PersonaDeConfianza;
-use App\MedidasDeProteccion\GVulnerableMProteccion;
+use App\MedidasDeProteccion\TestigoGrupoVulnerable;
 use App\MedidasDeProteccion\CrimenesMedidaDeProteccion;
 use App\MedidasDeProteccion\ServicioMedidaDeProteccion;
 
@@ -34,6 +34,18 @@ use DB;
 
 class MedidaDeProteccionController extends Controller
 {
+
+
+
+    public function index(){
+
+        $medidas_de_proteccion=MedidaDeProteccion::get();
+        return view('MedidasDeProteccion.index',
+        compact('medidas_de_proteccion'));  
+    
+    }
+
+
     public function create(){
         $areasServicio=AreaServicio::get();
         $crimenes=Crimen::get();
@@ -65,13 +77,20 @@ class MedidaDeProteccionController extends Controller
         ));
     }
 
-    public function index(){
-        return view('MedidasDeProteccion.index');
-    }
 
     public function store(Request $request)
     {
-
+        
+        $testigo = new Testigo;
+        $testigo->nombre=$request->nombre_involucrado;
+        $testigo->edad=$request->edad;
+        $testigo->nacionalidad_id=(json_decode($request->input('nacionalidad'))->id);
+        $testigo->ocupacion_id=(json_decode($request->input('ocupacion'))->id);;
+        $testigo->domicilio=$request->domicilio_testigo;
+        $testigo->usuario_id=(json_decode($request->input('usuario'))->id);
+        $testigo->correo=$request->correo_involucrado;
+        $testigo->save();
+        $testigoId=$testigo->id;
 
         DB::beginTransaction();
         $medida_proteccion= new MedidaDeProteccion;
@@ -83,19 +102,11 @@ class MedidaDeProteccionController extends Controller
         $medida_proteccion->fecha= $request->fecha_carpeta;
         $medida_proteccion->hora= $request->hora;
         $medida_proteccion->solicitante= $request->solicitante;
+        $medida_proteccion->testigo_id=$testigoId;
         $medida_proteccion->save();
         $idMedidaProteccion=$medida_proteccion->id;
 
-        $testigo = new Testigo;
-        $testigo->nombre=$request->nombre_involucrado;
-        $testigo->edad=$request->edad;
-        $testigo->nacionalidad_id=(json_decode($request->input('nacionalidad'))->id);
-        $testigo->ocupacion_id=(json_decode($request->input('ocupacion'))->id);;
-        $testigo->domicilio=$request->domicilio_testigo;
-        $testigo->usuario_id=(json_decode($request->input('usuario'))->id);
-        $testigo->correo=$request->correo_involucrado;
-        $testigo->medida_de_proteccion_id=$idMedidaProteccion;
-        $testigo->save();
+        
 
         $persona_confianza= new PersonaDeConfianza;
         $persona_confianza->nombre=$request->nombre_persona_confianza;
@@ -113,8 +124,8 @@ class MedidaDeProteccionController extends Controller
         $gruposVulnerables=$request->input('gruposVulnerables');
         while($cont< count($request->input('gruposVulnerables')))
         {
-            $medida_gvulnerable=new GVulnerableMProteccion;
-            $medida_gvulnerable->medida_de_proteccion_id=$idMedidaProteccion;
+            $medida_gvulnerable=new TestigoGrupoVulnerable;
+            $medida_gvulnerable->testigo_id=$testigoId;
             $medida_gvulnerable->grupo_vulnerable_id= json_decode($gruposVulnerables[$cont])->id;
             $medida_gvulnerable->save();
             $cont=$cont+1; 
@@ -129,35 +140,44 @@ class MedidaDeProteccionController extends Controller
 
 
        // return count($servicios);
+
+       while($cont2< count($servicios))
+       {
+           $medida_servicios=new ServicioMedidaDeProteccion;
+           $medida_servicios->medida_de_proteccion_id=$idMedidaProteccion;
+           $medida_servicios->servicio_id= $servicios[$cont2];
+           $medida_servicios->save();
+           $cont2=$cont2+1; 
+       }
+
        
-        while($cont2< count($servicios))
+        while($cont1< count($delitos))
         {
-            $medida_servicios=new ServicioMedidaDeProteccion;
-            $medida_servicios->medida_de_proteccion_id=$idMedidaProteccion;
-            $medida_servicios->servicio_id= $servicios[$cont2];
-            $medida_servicios->save();
-            $cont2=$cont2+1; 
+            $medida_delitos=new CrimenesMedidaDeProteccion;
+            $medida_delitos->medida_de_proteccion_id=$idMedidaProteccion;
+            $medida_delitos->crimen_id=json_decode($delitos[$cont1])->id;
+            $medida_delitos->save();
+            $cont1=$cont1+1; 
         }
         
         DB::commit();
 
-        Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
+       // Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
         return redirect()->back()->with('flash', 
         'Su informacion ha sido recibida, personal de la Fiscalía se pondrá en
          contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');
-
-        
-
-
 
     
       
     }
 
-    public function show(){
+    public function show($id){
 
-
-      return view('MedidasDeProteccion.detalles');
+     $medida_de_proteccion=MedidaDeProteccion::
+      where('id',$id) 
+      ->first();
+      return view('MedidasDeProteccion.detalles',
+            compact('medida_de_proteccion'));
     }
 
     public function seguimiento(){

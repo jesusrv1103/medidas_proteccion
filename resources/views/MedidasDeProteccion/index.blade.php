@@ -63,58 +63,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    @foreach($medidas_de_proteccion  as $medida)
                     <tr>
-                    <td>05/2020</td>
-                    <td>Sentencia condenatoria</td>
-                    <td>Villanueva</td>
+                    <td>{{$medida->carpeta}}</td>
+                    <td>{{$medida->causa_penal}}</td>
+                    <td>{{$medida->municipio->nombre}}</td>
 
-                    <td>Villanueva</td>
-                    <td>JOSE RAMOS GARCIA</td>
+                    <td>{{$medida->distrito->nombre}}</td>
+                    <td>{{$medida->testigo->nombre}}</td>
                        
                         <td>
                    
                             <center>
-                            {{--
-                                <a href="{{route('predenuncias.recibidas.pdf',$predenuncia->id_predenuncia)}}" type="button" class="btn btn-outline-hover-info btn-elevate btn-icon"><i class="la la-file-pdf-o"></i></a>
-                                <a href="{{route('predenuncias.recibidas.pdf',$predenuncia->id_predenuncia)}}" type="button" class="btn btn-outline-hover-info btn-elevate btn-icon"><i class="la la-copy"></i></a>
-                                --}}
 
-                                <a href="{{route('medidas.proteccion.detalles')}}" type="button" class="btn btn-outline-hover-info btn-elevate btn-icon"><i class="la la-eye"></i></a>
+                                <a href="{{route('medidas.proteccion.detalles',$medida->id)}}" type="button" class="btn btn-outline-hover-info btn-elevate btn-icon"><i class="la la-eye"></i></a>
                       
-                            
                             </center>
 
                         </td>
 
                      
                     </tr>
-
-                    <tr>
-                    <td>05/2020</td>
-                    <td>Asesinato</td>
-                    <td>Calera</td>
-
-                    <td>Calera</td>
-                    <td>Alondra Rosales Corvera</td>
-                       
-                        <td>
-                   
-                            <center>
-                            {{--
-                                <a href="{{route('predenuncias.recibidas.pdf',$predenuncia->id_predenuncia)}}" type="button" class="btn btn-outline-hover-info btn-elevate btn-icon"><i class="la la-file-pdf-o"></i></a>
-                                <a href="{{route('predenuncias.recibidas.pdf',$predenuncia->id_predenuncia)}}" type="button" class="btn btn-outline-hover-info btn-elevate btn-icon"><i class="la la-copy"></i></a>
-                                --}}
-
-                                <a href="{{route('medidas.proteccion.detalles')}}" type="button" class="btn btn-outline-hover-info btn-elevate btn-icon"><i class="la la-eye"></i></a>
-                               
-                            
-                            </center>
-
-                        </td>
-
-                     
-                    </tr>
+                    @endforeach
                    
                    
 

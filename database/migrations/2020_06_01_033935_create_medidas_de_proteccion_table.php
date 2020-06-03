@@ -25,6 +25,8 @@ class CreateMedidasDeProteccionTable extends Migration
             $table->date("fecha");
             $table->time("hora");
             $table->string("solicitante");
+            $table->BigInteger('testigo_id')->unsigned();
+            $table->foreign('testigo_id')->references('id')->on('testigos');
             $table->timestamps();
         });
     }
