@@ -172,6 +172,10 @@ class MedidaDeProteccionController extends Controller
             $cont1=$cont1+1; 
         }
         
+       
+
+        Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($medida_proteccion));
+
         DB::commit();
 
         return redirect()->back()->with('flash', 

@@ -17,11 +17,11 @@ class MedidaDeProteccionRecibida extends Mailable
      * @return void
      */
 
-    public  $request;
+    public  $medida_proteccion;
 
-    public function __construct($request)
+    public function __construct($medida_proteccion)
     {
-        $this->request =$request;
+        $this->medida_proteccion =$medida_proteccion;
     }
 
     /**
