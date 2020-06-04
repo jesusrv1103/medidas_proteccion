@@ -175,7 +175,7 @@ class MedidaDeProteccionController extends Controller
        
         $evidencias = EvidenciaMedidaProteccion::
         select('imagen')
-        ->where('predenuncia_id', '=', $idMedidaProteccion)
+        ->where('medida_de_proteccion_id', '=', $idMedidaProteccion)
         ->get();
         $evidencias = $evidencias;
 
