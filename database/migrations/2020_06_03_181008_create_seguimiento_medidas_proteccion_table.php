@@ -25,8 +25,7 @@ class CreateSeguimientoMedidasProteccionTable extends Migration
             $table->text('incidencias');
             $table->BigInteger('medida_de_proteccion_id')->unsigned();
             $table->foreign('medida_de_proteccion_id')->references('id')->on('medidas_de_proteccion');
-            $table->BigInteger('audiencia_medida_id')->unsigned();
-            $table->foreign('audiencia_medida_id')->references('id')->on('audiencia_medidas');
+           
             $table->timestamps();
         });
     }

@@ -313,7 +313,7 @@
 
 
                         <p>
-                            {{$medida_de_proteccion->solicitante}}
+                            {{$medida_de_proteccion->descripcion->descripcion}}
                         </p>
 
 

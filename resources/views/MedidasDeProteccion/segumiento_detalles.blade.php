@@ -47,7 +47,7 @@
                             <div href="#" class="kt-invoice__logo">
                                 <img src="/assets/logos_fiscalia/original180x90.png" width="200px">
                                 <span class="kt-invoice__desc">
-                                    <span>Medida de proteccion de la carpeta: {{$medida_de_proteccion->carpeta}} </span>
+                                    <span>Medida de proteccion de la carpeta: {{$medida_de_proteccion->seguimiento->folio}} </span>
 
                                 </span>
                             </div>
@@ -315,6 +315,178 @@
                         <p>
                             {{$medida_de_proteccion->solicitante}}
                         </p>
+
+
+                        <span>
+                            <h3>Seguimiento de la Medida de Protección</h3>
+                        </span>
+
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Folio: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->folio}}
+                            </span>
+                        </div>
+
+                     
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Fecha: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->fecha}}
+                            </span>
+                        </div>
+
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>M.P  que otorga: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->nombre_mp_otorga}}
+                            </span>
+                        </div>
+
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Nombre agresor: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->nombre_agresor}}
+                            </span>
+                        </div>
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Duracion: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->duracion}}
+                            </span>
+                        </div>
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Fecha notificacion: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->fecha_notificacion}}
+                            </span>
+                        </div>
+
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Numero de oficio: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->fecha_notificacion}}
+                            </span>
+                        </div>
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Incidencias: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->incidencias}}
+                            </span>
+                        </div>
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Incidencias: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->incidencias}}
+                            </span>
+                        </div>
+
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Servicios: </strong>
+                            </span>
+                            <br>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                @foreach($medida_de_proteccion->seguimiento->fracciones  as $servicio)
+                                {{$servicio->nombre}}
+                                <br>
+                                @endforeach
+
+
+                                <br>
+                            </span>
+                        </div>
+
+
+                        <span>
+                            <h3>Audiencia Judicial de Ratificación de Medida:</h3>
+                        </span>
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Fecha: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->audiencia->fecha}}
+                            </span>
+                        </div>
+
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Fecha: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->audiencia->resultado}}
+                            </span>
+                        </div>
+
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>Fecha: </strong>
+                            </span>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                {{$medida_de_proteccion->seguimiento->audiencia->resultado}}
+                            </span>
+                        </div>
+
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>¿Se han decretado Medidas de Protecion con anteriroridad?: </strong>
+                            </span>
+                            <br>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                @if($medida_de_proteccion->seguimiento->audiencia->antecedente_medida==1)
+                                Si
+                                @else
+                                No
+                                @endif
+                            </span>
+                        </div>
+
+                        <div class="kt-widget13__item">
+                            <span class="kt-widget13__desc">
+                                <strong>¿Hay Antecedentes de Denuncias Anteriores a Esta Medida?: </strong>
+                            </span>
+                            <br>
+                            <span class="kt-widget13__text kt-widget13__text--bold">
+                                @if($medida_de_proteccion->seguimiento->audiencia->antecedente_denuncia_medida)
+                                Si
+                                @else
+                                No
+                                @endif
+                            </span>
+                        </div>
+
 
 
 

@@ -14,6 +14,9 @@ use App\Admin\AreaServicio;
 use App\MedidasDeProteccion\PersonaDeConfianza;
 use App\MedidasDeProteccion\SeguimientoMedidaProteccion;
 
+use App\MedidasDeProteccion\MedidaProteccionDescripcion;
+
+
 class MedidaDeProteccion extends Model
 {
     protected $table="medidas_de_proteccion";
@@ -30,7 +33,7 @@ class MedidaDeProteccion extends Model
 
     public function testigo()
     {
-        return $this->belongsTo(Testigo::class,'testigo_id');
+        return $this->hasOne(Testigo::class,'medida_de_proteccion_id', 'id');
     }
 
 
@@ -45,10 +48,12 @@ class MedidaDeProteccion extends Model
         return $this->belongsTo(Distrito::class,'distrito_id');
     }
 
+    
+
 
     public function persona_confianza()
     {
-        return $this->belongsTo(PersonaDeConfianza::class,'persona_confianza_id');
+        return $this->hasOne(PersonaDeConfianza::class,'medida_de_proteccion_id', 'id');
     }
 
 
@@ -70,6 +75,12 @@ class MedidaDeProteccion extends Model
     public function seguimiento()
     {
         return $this->hasOne(SeguimientoMedidaProteccion::class, 'medida_de_proteccion_id', 'id');
+    }
+
+
+    public function descripcion()
+    {
+        return $this->hasOne(MedidaProteccionDescripcion::class,'medida_de_proteccion_id', 'id');
     }
 
 

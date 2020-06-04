@@ -18,6 +18,8 @@ class CreatePersonasDeConfianzaTable extends Migration
             $table->string('nombre')->nullable($value = true);
             $table->string('telefono')->nullable($value = true);
             $table->string('domicilio')->nullable($value = true);
+            $table->BigInteger('medida_de_proteccion_id')->unsigned();
+            $table->foreign('medida_de_proteccion_id')->references('id')->on('medidas_de_proteccion');
             $table->timestamps();
         });
     }
