@@ -36,13 +36,7 @@ class SeguimientoMedidaProteccionController extends Controller
     
         DB::beginTransaction();
 
-        $audiencia=new AudienciaMedida;
-        $audiencia->fecha=$request->fecha_audiencia;
-        $audiencia->resultado=$request->resultado;
-        $audiencia->antecedente_medida=$request->antecedente_medida;
-        $audiencia->antecedente_denuncia_medida=$request->antecedente_denuncia_medida;
-        $audiencia->save();
-        $idAudiencia= $audiencia->id;
+        
 
         $seguimiento = new SeguimientoMedidaProteccion;
         $seguimiento->folio=$this->generarFolio();
@@ -54,10 +48,19 @@ class SeguimientoMedidaProteccionController extends Controller
         $seguimiento->numero_oficio=$request->numero_oficio;
         $seguimiento->incidencias=$request->incidencias;
         $seguimiento->medida_de_proteccion_id=$request->idMedidaProteccion;
-        $seguimiento->audiencia_medida_id=$idAudiencia;
+     
         $seguimiento->save();
 
         $idSeguimiento =$seguimiento->id;
+
+        $audiencia=new AudienciaMedida;
+        $audiencia->fecha=$request->fecha_audiencia;
+        $audiencia->resultado=$request->resultado;
+        $audiencia->antecedente_medida=$request->antecedente_medida;
+        $audiencia->antecedente_denuncia_medida=$request->antecedente_denuncia_medida;
+        $audiencia->seguimiento_id=$idSeguimiento;
+        $audiencia->save();
+        $idAudiencia= $audiencia->id;
        
 
         $medida= MedidaDeProteccion::find($request->idMedidaProteccion);
@@ -99,7 +102,7 @@ class SeguimientoMedidaProteccionController extends Controller
         $today = Carbon::now()->format('Y');
         if(SeguimientoMedidaProteccion::latest('id')->first() != null)
         {
-            dd($ultimoIdSeguimiento);
+          
             $ultimoIdSeguimiento= intval($ultimoIdSeguimiento->id)+1;
             
             

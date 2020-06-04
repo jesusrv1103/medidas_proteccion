@@ -9,7 +9,7 @@
 </head>
 
 <body>
-      
+
     <h1> Medidas de Proteccion</h1>
     <table>
         <tr>
@@ -17,61 +17,63 @@
         </tr>
         <tr>
             <td> Carpeta: </td>
-            <td>01/2020 </td>
+            <td>{{$medida_proteccion->carpeta}} </td>
         </tr>
 
 
 
         <tr>
             <td>Causa Penal: </td>
-            <td>Asesinato </td>
+            <td> {{$medida_proteccion->causa_penal}} </td>
         </tr>
         <tr>
             <td>Delitos: </td>
             <td>
-                Asesinato/Robo a Mano Armada
-             
-             </td>
+                @foreach($medida_proteccion->delitos as $delito)
+                {{$delito->nombre}}
+                <br>
+                @endforeach
+
+            </td>
         </tr>
 
 
         <tr>
             <td>Municipio: </td>
-            <td>Villanueva </td>
+            <td> {{$medida_proteccion->distrito->nombre}} </td>
         </tr>
 
 
         <tr>
             <td>Distritos: </td>
-            <td>Villanueva  </td>
+            <td>  {{$medida_proteccion->distrito->nombre}}</td>
         </tr>
 
         <tr>
             <td>Fiscal: </td>
-            <td>JUAN CARLOS RAGARCIA  </td>
+            <td>{{$medida_proteccion->fiscal}}</td>
         </tr>
+
 
         <tr>
             <td>Fecha: </td>
-            <td>05/05/2020  </td>
+            <td> {{$medida_proteccion->fecha}} </td>
         </tr>
 
         <tr>
             <td>Hora: </td>
-            <td>12:45 </td>
+            <td>   {{$medida_proteccion->hora}} </td>
         </tr>
-
-
-        
 
 
         <tr>
             <td>Solicitante: </td>
-            <td>JUAN CARLOS GARCIA HERNANDEZ  </td>
+            <td>  {{$medida_proteccion->solicitante}}</td>
         </tr>
 
-  
-       
+
+
+
     </table>
 
 
@@ -82,117 +84,97 @@
         </tr>
         <tr>
             <td> Nombre: </td>
-            <td>JUAN RAMIREZ GARCIA</td>
+            <td>    {{$medida_proteccion->testigo->nombre}}</td>
         </tr>
 
 
         <tr>
             <td> Edad: </td>
-            <td>45 </td>
+            <td>  {{$medida_proteccion->testigo->edad}} </td>
         </tr>
 
         <tr>
-            <td> Domicilio: </td>
-            <td>VILLANUEVA ZACATECAS BARRIO DEL GUADALUPE CALLE DE LA CONCEPCION #32</td>
+            <td> Edad: </td>
+            <td>  {{$medida_proteccion->testigo->domicilio}} </td>
         </tr>
 
         <tr>
             <td> Nacionalidad: </td>
-            <td>MEXICANA</td>
+            <td> {{$medida_proteccion->testigo->nacionalidad->nombre}} </td>
         </tr>
 
 
         <tr>
             <td> Ocupacion: </td>
-            <td>CARPINTERO </td>
+            <td>    {{$medida_proteccion->testigo->ocupacion->nombre}} </td>
         </tr>
+
 
         <tr>
             <td>Tipo de Usuario: </td>
-            <td>Victima Directa</td>
-        </tr>
-
-
-        <tr>
-            <td> Grupos Vulnerables: </td>
-            <td>Mujer/ Persona Indigena</td>
+            <td> {{$medida_proteccion->testigo->usuario->nombre}} </td>
         </tr>
 
         <tr>
             <td>Telefono: </td>
-            <td>4991054545</td>
+            <td> {{$medida_proteccion->testigo->telefono}}</td>
         </tr>
 
         <tr>
-            <td>Correo: </td>
-            <td> S/R</td>
-        </tr>
-        
-
-     
             <td>Correo electrónico: </td>
-            <td>jesus21c@hotmail.com</td>
+            <td>{{$medida_proteccion->testigo->correo}}</td>
         </tr>
 
 
-        
-        
-       
-    </table>
-
-
-    <table>
         <tr>
-            <th colspan="2">Datos de Persona de Confianza</th>
+            <td>Nombre Persona de confianza: </td>
+            <td>   {{$medida_proteccion->persona_confianza->nombre}}</td>
         </tr>
+
+
         <tr>
             <td>Telefono Persona de confianza: </td>
-            <td>4991058737</td>
+            <td>  {{$medida_proteccion->persona_confianza->telefono}}</td>
         </tr>
 
         <tr>
-            <td>Domicilio de Persona de confianza: </td>
-            <td>Villlanueva Zacatecas BARRIO DE LOS VARELA  CALLE DE LAS FLORES #212</td>
-        </tr>
-
-       
-    </table>
-
-    <table>
-        <tr>
-            <th colspan="2">Datos Generales</th>
-        </tr>
-        <tr>
-            <td>Area del Servicio que Solicita: </td>
-            <td>Area de Trabajo Social</td>
-        </tr>
-
-        <tr>
-            <td>Servicio que Solicita: </td>
-            <td>Orientacion Legal</td>
-        </tr>
-
-       
-    </table>
-
-    <table>
-        <tr>
-            <th colspan="2">Datos Generales</th>
-        </tr>
-        <tr>
-          <p>
-          El buscador de Google o buscador web de Google es un motor de búsqueda en la web propiedad de Alphabet Inc., es el motor de búsqueda más utilizado en la Web, ​ recibe cientos de millones de consultas cada día a través de sus diferentes servicios.​ Wikipedia
-           </p>
+            <td>Domicilio Persona de confianza: </td>
+            <td>  {{$medida_proteccion->persona_confianza->domicilio}}</td>
         </tr>
 
      
+        @php
+        $areaId=$medida_proteccion->servicios_solicita[0]->area_id;
+        @endphp
 
-       
+
+
+        <tr>
+            <td>Area del servicio que solicita: </td>
+            <td>   {{$medida_proteccion->area_servicio($areaId)->nombre}} </td>
+        </tr>
+
+        <tr>
+            <td>Servicio que solicita: </td>
+            <td>   
+                @foreach($medida_proteccion->servicios_solicita as $servicio)
+                {{$servicio->nombre}}
+                <br>
+                @endforeach</td>
+        </tr>
+
+
+
     </table>
-  
+
+    <table>
+        <tr>Relato Breve de los Hechos</tr>
+        <tr><p>{{$medida_proteccion->descripcion->descripcion}}</p></tr>
+    </table>
 
 
-  
+
+
 </body>
 
 </html>
