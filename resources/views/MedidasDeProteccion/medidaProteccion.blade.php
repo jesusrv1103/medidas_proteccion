@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- 
+<!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4 & Angular 8
 Author: KeenThemes
 Website: http://www.keenthemes.com/
@@ -395,11 +395,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
-                                         
 
 
-                                         
-                                            
+
+
+
                                             <div class="form-group form-group-last">
                                                 <div class="alert alert-secondary" role="alert">
                                                     <div class="alert-icon"><i
@@ -449,7 +449,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <label class="col-2 col-form-label">Tipo de Usuario que solicita: <span
                                                         style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                    <select class="form-control kt-select2" id="kt_select2_3"
+                                                    <select class="form-control kt-select2" id="kt-select-tipousuario"
                                                         id="municipio_id" style="width: 100%" name="usuario" required>
                                                         <option value="">Seleccione un tipo de usuario</option>
                                                         @foreach ($usuarios as $usuario)
@@ -531,7 +531,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 class="input-group-text"><i
                                                                     class="la la-chain"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control" 
+                                                        <input type="text" class="form-control"
                                                             name="telefono" onkeypress=" return soloNumeros(event);"
                                                             required>
 
@@ -555,7 +555,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-                                            
+
                                             <div class="form-group form-group-last">
                                                 <div class="alert alert-secondary" role="alert">
                                                     <div class="alert-icon"><i
@@ -566,7 +566,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
+                                            <div class="form-group row" id="nombreConfianza"  >
                                                 <label for="example-text-input" class="col-2 col-form-label">Nombre:
                                                    </label>
                                                 <div class="col-10">
@@ -579,7 +579,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
 
-                                            <div class="form-group row">
+                                            <div class="form-group row" id="telefonoConfianza" >
                                                 <label for="example-text-input" class="col-2 col-form-label">Telefono
                                                     Persona de confianza:</label>
                                                 <div class="col-10">
@@ -588,7 +588,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 class="input-group-text"><i
                                                                     class="la la-chain"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control" 
+                                                        <input type="text" class="form-control"
                                                             name="telefono_confianza"
                                                             onkeypress=" return soloNumeros(event);" required>
 
@@ -601,10 +601,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-                                        
 
 
-                                            <div class="form-group row">
+
+                                            <div class="form-group row"  id="domicilioConfianza">
                                                 <label for="example-text-input" class="col-2 col-form-label">Domicilio  Persona de confianza:
                                                     </label>
                                                 <div class="col-10">
@@ -619,7 +619,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-                                          
+
                                             <div class="form-group form-group-last">
                                                 <div class="alert alert-secondary" role="alert">
                                                     <div class="alert-icon"><i
@@ -674,7 +674,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                                             <div class="form-group row">
-                                                
+
                                                 <div class="col-12">
                                                         <label for="example-text-input"
                                                         class=" col-form-label">Relato Breve de los Hechos:</label>
@@ -687,20 +687,20 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                                             <div class="form-group row">
-                                                   
+
                                                 <div class="col-12">
                                                         <label class=" col-form-label">Agregar evidencia(imagenes, pdf, audios,etc):</label>
                                                         <div class="dropzone">
 
                                                             </div>
-                                                
+
                                                 </div>
                                             </div>
 
 
-                                            
 
-                                            
+
+
 
 
                                             <div class="kt-portlet__foot">
@@ -919,7 +919,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <script>
     function mayus(e) {
- 
+
  e.value = e.value.toUpperCase();
 }
 
@@ -970,14 +970,14 @@ function onSelectAreaCambio(){
     var area= $(this).val();
     var area_json= JSON.parse(area)
     var area_id =area_json.id;
-   
+
     $.get('/api/servicios/'+area_id,function(data){
         var html_select='<option value"">Seleccione un servicio</option>';
         for (let index = 0; index < data.length; index++) {
-           
+
            html_select+='<option value="'+data[index].id+'">'+data[index].nombre+'</option>'
             $('#select-servicio').html(html_select);
-           
+
         }
     });
 
@@ -992,7 +992,7 @@ $('#kt-select-ocupacion, #kt_select2_3_validate').select2({
             placeholder: "Selecciona una Ocupacion",
         });
 
-        
+
 $('#kt_select2-delito, #kt_select2_3_validate').select2({
         placeholder: "Selecciona un Delito",
   });
@@ -1046,11 +1046,16 @@ $(function() {
 });
 
 
-    
+
 
 $(function() {
     $('#kt-categoria').on('change',onSelectCategoriaCambio);
 });
+
+$('#kt-select-tipousuario').select2({
+            placeholder: "Selecciona Tipo de Usuario que Solicita",
+            allowClear: true
+        });
 
 
 
@@ -1064,18 +1069,18 @@ function onSelectCategoriaCambio(){
     var categoria_json= JSON.parse(categoria)
     var categoria_id =categoria_json.id;
     var html_select='';
-    
+
     $.get('/api/fracciones/'+ley_id+'/'+categoria_id,function(data){
         console.log(data);
        if(data.length > 0) {
         for (let index = 0; index < data.length; index++) {
            html_select+='<option value="'+data[index].id+'">'+data[index].nombre+'</option>'
             $('#select-fraccion').html(html_select);
-           
+
         }
        }
-        else { 
-           
+        else {
+
             $('#select-fraccion').html(html_select);
         }
     });
@@ -1103,6 +1108,13 @@ var myDropzone = new Dropzone('.dropzone', {
         $('.dz-error-message:last >span').text(msg);
     });
     Dropzone.autoDiscover = false;
+
+
+
+
+    function existePersonaConfianza(){
+        document.getElementById("nombre").style.display = "none";
+    }
 </script>
 
 
