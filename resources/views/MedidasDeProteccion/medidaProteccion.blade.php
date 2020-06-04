@@ -31,13 +31,13 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
     <script>
         WebFont.load({
-				google: {
-					"families": ["Poppins:300,400,500,600,700"]
-				},
-				active: function() {
-					sessionStorage.fonts = true;
-				}
-			});
+            google: {
+                "families": ["Poppins:300,400,500,600,700"]
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
     </script>
 
     <!--end::Fonts -->
@@ -257,7 +257,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="alert-icon"><i
                                                             class="flaticon-avatar kt-font-brand"></i></div>
                                                     <div class="alert-text">
-                                                        <h2>Datos  de Medida de Proteccion</h2>
+                                                        <h2>Datos de Medida de Proteccion</h2>
                                                     </div>
                                                 </div>
                                             </div>
@@ -268,13 +268,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <input type="text" class="form-control" onchange="mayus(this);"
-                                                        name="carpeta" >
+                                                        name="carpeta">
                                                     <span class="form-text text-muted">Por favor ingrese numero de
                                                         carpeta.</span>
                                                 </div>
                                             </div>
 
-                                            <input type="hidden" class="form-control" value="{{($ultimoIdMedida->id)+1}}" name="medida_id"/>
+                                            <input type="hidden" class="form-control"
+                                                value="{{($ultimoIdMedida->id)+1}}" name="medida_id" />
 
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-2 col-form-label">Causa
@@ -282,7 +283,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <input type="text" class="form-control" onchange="mayus(this);"
-                                                        name="causaPenal" >
+                                                        name="causaPenal">
                                                     <span class="form-text text-muted">Por favor ingrese Causa
                                                         Penal.</span>
                                                 </div>
@@ -354,7 +355,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <input type="text" class="form-control" onchange="mayus(this);"
-                                                        name="fiscal" >
+                                                        name="fiscal">
                                                     <span class="form-text text-muted">Por favor ingrese nombre de
                                                         fiscal.</span>
                                                 </div>
@@ -389,7 +390,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <input type="text" class="form-control" onchange="mayus(this);"
-                                                        name="solicitante" required >
+                                                        name="solicitante" required>
                                                     <span class="form-text text-muted">Por favor ingrese nombre de
                                                         solicitante.</span>
                                                 </div>
@@ -405,7 +406,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="alert-icon"><i
                                                             class="flaticon-avatar kt-font-brand"></i></div>
                                                     <div class="alert-text">
-                                                        <h2>Datos de la Víctima, Testigo o Diversa Persona que Intervenga en el Proceso Penal </h2>
+                                                        <h2>Datos de la Víctima, Testigo o Diversa Persona que
+                                                            Intervenga en el Proceso Penal </h2>
                                                     </div>
                                                 </div>
                                             </div>
@@ -508,7 +510,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <select class="form-control kt-select2" id="kt-grupo-vulnerable"
-                                                        style="width: 100%" name="gruposVulnerables[]" required multiple="multiple">
+                                                        style="width: 100%" name="gruposVulnerables[]" required
+                                                        multiple="multiple">
 
                                                         @foreach ($grupos_vulnerables as $grupo)
                                                         <option value="{{$grupo}}">
@@ -531,9 +534,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 class="input-group-text"><i
                                                                     class="la la-chain"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control"
-                                                            name="telefono" onkeypress=" return soloNumeros(event);"
-                                                            required>
+                                                        <input type="text" class="form-control" name="telefono"
+                                                            onkeypress=" return soloNumeros(event);" required>
 
                                                     </div>
                                                     <span class="form-text text-muted">Por favor ingrese
@@ -566,12 +568,35 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row" id="nombreConfianza"  >
+                                            <div class="form-group row">
+                                                <label class="col-3 col-form-label">Ingresar datos de persona de
+                                                    confianza:</label>
+                                                <div class="col-9">
+                                                    <div class="kt-radio-inline">
+														<label class="kt-radio">
+															<input type="radio" id="persona_si" name="persona_confianza"> Si
+															<span></span>
+														</label>
+														<label class="kt-radio">
+															<input type="radio"  id="persona_no" name="persona_confianza"> No
+															<span></span>
+														</label>
+														
+													</div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div class="form-group row" id="nombreConfianza">
                                                 <label for="example-text-input" class="col-2 col-form-label">Nombre:
-                                                   </label>
+                                                </label>
                                                 <div class="col-10">
-                                                    <input type="text" class="form-control" name="nombre_persona_confianza"
-                                                        required onchange="mayus(this);">
+                                                    <input type="text" class="form-control"
+                                                        name="nombre_persona_confianza" required
+                                                        onchange="mayus(this);">
                                                     <span class="form-text text-muted">
                                                         Por favor ingrese Nombre de la víctima, testigo o diversa
                                                         persona que intervenga en el proceso penal.</span>
@@ -579,7 +604,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
 
-                                            <div class="form-group row" id="telefonoConfianza" >
+                                            <div class="form-group row" id="telefonoConfianza">
                                                 <label for="example-text-input" class="col-2 col-form-label">Telefono
                                                     Persona de confianza:</label>
                                                 <div class="col-10">
@@ -604,14 +629,15 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-                                            <div class="form-group row"  id="domicilioConfianza">
-                                                <label for="example-text-input" class="col-2 col-form-label">Domicilio  Persona de confianza:
-                                                    </label>
+                                            <div class="form-group row" id="domicilioConfianza">
+                                                <label for="example-text-input" class="col-2 col-form-label">Domicilio
+                                                    Persona de confianza:
+                                                </label>
                                                 <div class="col-10">
                                                     <input type="text" class="form-control" name="domicilio_confianza"
                                                         required onchange="mayus(this);">
                                                     <span class="form-text text-muted">
-                                                    Por favor ingrese Domicilio de
+                                                        Por favor ingrese Domicilio de
                                                         otra persona de confianza con quien se pueda establecer
                                                         comunicación con la persona valorada.</span>
                                                 </div>
@@ -676,9 +702,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="form-group row">
 
                                                 <div class="col-12">
-                                                        <label for="example-text-input"
-                                                        class=" col-form-label">Relato Breve de los Hechos:</label>
-                                                     <textarea class="form-control" rows="12"  name="descripcion" onchange="mayus(this);"></textarea>
+                                                    <label for="example-text-input" class=" col-form-label">Relato Breve
+                                                        de los Hechos:</label>
+                                                    <textarea class="form-control" rows="12" name="descripcion"
+                                                        onchange="mayus(this);"></textarea>
                                                     <span class="form-text text-muted">Por favor ingresa una
                                                         descripción clara y concisa.</span>
                                                 </div>
@@ -689,10 +716,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="form-group row">
 
                                                 <div class="col-12">
-                                                        <label class=" col-form-label">Agregar evidencia(imagenes, pdf, audios,etc):</label>
-                                                        <div class="dropzone">
+                                                    <label class=" col-form-label">Agregar evidencia(imagenes, pdf,
+                                                        audios,etc):</label>
+                                                    <div class="dropzone">
 
-                                                            </div>
+                                                    </div>
 
                                                 </div>
                                             </div>
@@ -797,23 +825,23 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- begin::Global Config(global config for global JS sciprts) -->
     <script>
         var KTAppOptions = {
-				"colors": {
-					"state": {
-						"brand": "#374afb",
-						"light": "#ffffff",
-						"dark": "#282a3c",
-						"primary": "#5867dd",
-						"success": "#34bfa3",
-						"info": "#36a3f7",
-						"warning": "#ffb822",
-						"danger": "#fd3995"
-					},
-					"base": {
-						"label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-						"shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-					}
-				}
-			};
+            "colors": {
+                "state": {
+                    "brand": "#374afb",
+                    "light": "#ffffff",
+                    "dark": "#282a3c",
+                    "primary": "#5867dd",
+                    "success": "#34bfa3",
+                    "info": "#36a3f7",
+                    "warning": "#ffb822",
+                    "danger": "#fd3995"
+                },
+                "base": {
+                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                }
+            }
+        };
     </script>
 
     <!-- end::Global Config -->
@@ -920,201 +948,208 @@ License: You must have a valid license purchased only from themeforest(the above
 <script>
     function mayus(e) {
 
- e.value = e.value.toUpperCase();
-}
+        e.value = e.value.toUpperCase();
+    }
 
-    function soloLetras(e){
+    function soloLetras(e) {
         key = e.keyCode || e.which;
         tecla = String.fromCharCode(key).toLowerCase();
         letras = " áéíóúabcdefghijklmnñopqrstuvwxyz.";
         especiales = "8-37-39-46";
         tecla_especial = false
-        for(var i in especiales){
-            if(key == especiales[i]){
-            tecla_especial = true;
-            break;
+        for (var i in especiales) {
+            if (key == especiales[i]) {
+                tecla_especial = true;
+                break;
             }
-  }
-  if(letras.indexOf(tecla)==-1 && !tecla_especial){
-    return false;
-  }
-}
-
-
-function soloNumeros(e){
-  key = e.keyCode || e.which;
-  tecla = String.fromCharCode(key);
-  letras = " 1,2,3,4,5,6,7,8,9,0,.";
-  especiales = "8-37-39-46";
-
-  tecla_especial = false
-  for(var i in especiales){
-    if(key == especiales[i]){
-      tecla_especial = true;
-      break;
+        }
+        if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+            return false;
+        }
     }
-  }
-
-  if(letras.indexOf(tecla)==-1 && !tecla_especial){
-    return false;
-  }
-}
 
 
-$(function() {
-    $('#kt-select-area').on('change',onSelectAreaCambio);
+    function soloNumeros(e) {
+        key = e.keyCode || e.which;
+        tecla = String.fromCharCode(key);
+        letras = " 1,2,3,4,5,6,7,8,9,0,.";
+        especiales = "8-37-39-46";
 
-});
-
-function onSelectAreaCambio(){
-    var area= $(this).val();
-    var area_json= JSON.parse(area)
-    var area_id =area_json.id;
-
-    $.get('/api/servicios/'+area_id,function(data){
-        var html_select='<option value"">Seleccione un servicio</option>';
-        for (let index = 0; index < data.length; index++) {
-
-           html_select+='<option value="'+data[index].id+'">'+data[index].nombre+'</option>'
-            $('#select-servicio').html(html_select);
-
+        tecla_especial = false
+        for (var i in especiales) {
+            if (key == especiales[i]) {
+                tecla_especial = true;
+                break;
+            }
         }
+
+        if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+            return false;
+        }
+    }
+
+
+    $(function () {
+        $('#kt-select-area').on('change', onSelectAreaCambio);
+
     });
 
+    function onSelectAreaCambio() {
+        var area = $(this).val();
+        var area_json = JSON.parse(area)
+        var area_id = area_json.id;
 
-}
+        $.get('/api/servicios/' + area_id, function (data) {
+            var html_select = '<option value"">Seleccione un servicio</option>';
+            for (let index = 0; index < data.length; index++) {
 
-$(document).on('change', '#select-servicio', function(event) {
-     $('#nombre_servicio').val($("#select-servicio option:selected").text());
-});
+                html_select += '<option value="' + data[index].id + '">' + data[index].nombre + '</option>'
+                $('#select-servicio').html(html_select);
 
-$('#kt-select-ocupacion, #kt_select2_3_validate').select2({
-            placeholder: "Selecciona una Ocupacion",
+            }
         });
 
 
-$('#kt_select2-delito, #kt_select2_3_validate').select2({
+    }
+
+    $(document).on('change', '#select-servicio', function (event) {
+        $('#nombre_servicio').val($("#select-servicio option:selected").text());
+    });
+
+    $('#kt-select-ocupacion, #kt_select2_3_validate').select2({
+        placeholder: "Selecciona una Ocupacion",
+    });
+
+
+    $('#kt_select2-delito, #kt_select2_3_validate').select2({
         placeholder: "Selecciona un Delito",
-  });
+    });
 
-$('#kt-select-municipio, #kt_select2_3_validate').select2({
+    $('#kt-select-municipio, #kt_select2_3_validate').select2({
         placeholder: "Selecciona un Municipio",
-  });
+    });
 
-  $('#kt-select-distrito, #kt_select2_3_validate').select2({
+    $('#kt-select-distrito, #kt_select2_3_validate').select2({
         placeholder: "Selecciona un Distrito",
-  });
+    });
 
 
-  $('#kt-select-nacionalidad, #kt_select2_3_validate').select2({
+    $('#kt-select-nacionalidad, #kt_select2_3_validate').select2({
         placeholder: "Selecciona una Nacioanlidad",
-  });
+    });
 
-  $('#kt-select-area').select2({
-            placeholder: "Selecciona una Area del Servicio que Solicita",
-            allowClear: true
-        });
+    $('#kt-select-area').select2({
+        placeholder: "Selecciona una Area del Servicio que Solicita",
+        allowClear: true
+    });
 
-  $('#select-servicio, #kt_select2_3_validate').select2({
+    $('#select-servicio, #kt_select2_3_validate').select2({
         placeholder: "Selecciona Area del Servicio que se Solcita",
-  });
+    });
 
 
-  $('#kt-grupo-vulnerable, #kt_select2_3_validate').select2({
+    $('#kt-grupo-vulnerable, #kt_select2_3_validate').select2({
         placeholder: "Selecciona Grupos Vunerables",
-  });
+    });
 
-  $('#kt-categoria').select2({
-            placeholder: "Selecciona una categoria del Servicio que Solicita",
-            allowClear: true
-        });
+    $('#kt-categoria').select2({
+        placeholder: "Selecciona una categoria del Servicio que Solicita",
+        allowClear: true
+    });
 
-$('#kt-ley').select2({
-    placeholder: "Selecciona una Ley del Servicio que Solicita",
-    allowClear: true
-       });
-
-
-$('#select-fraccion').select2({
-    placeholder: "Selecciona una Fraccion del Servicio que Solicita",
-    allowClear: true
-});
-
-
-$(function() {
-    $('#kt-ley').on('change',onSelectCategoriaCambio);
-});
-
-
-
-
-$(function() {
-    $('#kt-categoria').on('change',onSelectCategoriaCambio);
-});
-
-$('#kt-select-tipousuario').select2({
-            placeholder: "Selecciona Tipo de Usuario que Solicita",
-            allowClear: true
-        });
-
-
-
-
-function onSelectCategoriaCambio(){
-    var ley= $(this).val();
-    var ley_json= JSON.parse(ley)
-    var ley_id =ley_json.id;
-    //
-    var categoria= $(this).val();
-    var categoria_json= JSON.parse(categoria)
-    var categoria_id =categoria_json.id;
-    var html_select='';
-
-    $.get('/api/fracciones/'+ley_id+'/'+categoria_id,function(data){
-        console.log(data);
-       if(data.length > 0) {
-        for (let index = 0; index < data.length; index++) {
-           html_select+='<option value="'+data[index].id+'">'+data[index].nombre+'</option>'
-            $('#select-fraccion').html(html_select);
-
-        }
-       }
-        else {
-
-            $('#select-fraccion').html(html_select);
-        }
+    $('#kt-ley').select2({
+        placeholder: "Selecciona una Ley del Servicio que Solicita",
+        allowClear: true
     });
 
 
-}
-
-/////////////////
-
-
-var myDropzone = new Dropzone('.dropzone', {
-    url: '/api/medidasdeproteccion/{{($ultimoIdMedida->id)+1}}/evidencia',
-    acceptedFiles:'image/*,.mp3,.mp4,application/pdf,.psd,.zip,.rar',
-    maxFilesize: 7,
-    maxFiles: 12,
-    paramName: 'evidencia',
-    headers: {
-        'X-CSRF-TOKEN': '{{csrf_token()}}'
-    },
-    dictDefaultMessage: 'Arrastra  las fotos aqui para subirlas'
+    $('#select-fraccion').select2({
+        placeholder: "Selecciona una Fraccion del Servicio que Solicita",
+        allowClear: true
     });
 
-    myDropzone.on('error', function(file,res){
-        var msg= res.errors.evidencia[0];
+
+    $(function () {
+        $('#kt-ley').on('change', onSelectCategoriaCambio);
+    });
+
+
+
+
+    $(function () {
+        $('#kt-categoria').on('change', onSelectCategoriaCambio);
+    });
+
+    $('#kt-select-tipousuario').select2({
+        placeholder: "Selecciona Tipo de Usuario que Solicita",
+        allowClear: true
+    });
+
+
+
+
+    function onSelectCategoriaCambio() {
+        var ley = $(this).val();
+        var ley_json = JSON.parse(ley)
+        var ley_id = ley_json.id;
+        //
+        var categoria = $(this).val();
+        var categoria_json = JSON.parse(categoria)
+        var categoria_id = categoria_json.id;
+        var html_select = '';
+
+        $.get('/api/fracciones/' + ley_id + '/' + categoria_id, function (data) {
+            console.log(data);
+            if (data.length > 0) {
+                for (let index = 0; index < data.length; index++) {
+                    html_select += '<option value="' + data[index].id + '">' + data[index].nombre + '</option>'
+                    $('#select-fraccion').html(html_select);
+
+                }
+            }
+            else {
+
+                $('#select-fraccion').html(html_select);
+            }
+        });
+
+
+    }
+
+    /////////////////
+
+
+    var myDropzone = new Dropzone('.dropzone', {
+        url: '/api/medidasdeproteccion/{{($ultimoIdMedida->id)+1}}/evidencia',
+        acceptedFiles: 'image/*,.mp3,.mp4,application/pdf,.psd,.zip,.rar',
+        maxFilesize: 7,
+        maxFiles: 12,
+        paramName: 'evidencia',
+        headers: {
+            'X-CSRF-TOKEN': '{{csrf_token()}}'
+        },
+        dictDefaultMessage: 'Arrastra  las fotos aqui para subirlas'
+    });
+
+    myDropzone.on('error', function (file, res) {
+        var msg = res.errors.evidencia[0];
         $('.dz-error-message:last >span').text(msg);
     });
     Dropzone.autoDiscover = false;
 
 
+    $(document).ready(function(){  
+  
+  $("#persona_si").click(function() {  
+      if($("#radio").is(':checked')) {  
+          alert("Está activado");  
+      } else {  
+          alert("No está activado");  
+      }  
+  });  
 
+});  
 
-    function existePersonaConfianza(){
-        document.getElementById("nombre").style.display = "none";
-    }
 </script>
 
 
