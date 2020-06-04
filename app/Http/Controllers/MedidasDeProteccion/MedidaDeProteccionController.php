@@ -174,7 +174,7 @@ class MedidaDeProteccionController extends Controller
         
         DB::commit();
 
-       // Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
+        Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
         return redirect()->back()->with('flash', 
         'Su informacion ha sido recibida, personal de la Fiscalía se pondrá en
          contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');
