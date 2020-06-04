@@ -4,14 +4,14 @@
     <div class="kt-container  kt-container--fluid ">
         <div class="kt-subheader__main">
             <h3 class="kt-subheader__title">
-              Solicitudes de   Medidas de Proteccion
+                Medidas de Proteccion Aceptadas
             </h3>
             <span class="kt-subheader__separator kt-hidden"></span>
             <div class="kt-subheader__breadcrumbs">
                 <a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
                 <span class="kt-subheader__breadcrumbs-separator"></span>
                 <a href="" class="kt-subheader__breadcrumbs-link">
-                    Listado de Solicitudes Medidas De Proteccion</a>
+                    Listado de Medidas De Proteccion Aceptadas</a>
 
                 <!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
             </div>
@@ -28,17 +28,17 @@
         <div class="kt-portlet__head kt-portlet__head--lg">
             <div class="kt-portlet__head-label">
                 <span class="kt-portlet__head-icon">
-                    <i class="kt-font-brand 
+                    <i class="kt-font-brand
                     flaticon2-send"></i>
                 </span>
                 <h3 class="kt-portlet__head-title">
-                   Solicitudes Medidas de Proteccion
+                    Medidas de Proteccion Aceptadas
                 </h3>
             </div>
             <div class="kt-portlet__head-toolbar">
                 <div class="kt-portlet__head-wrapper">
                     <div class="kt-portlet__head-actions">
-                      
+
                     </div>
                 </div>
             </div>
@@ -50,43 +50,58 @@
                 <thead>
 
                     <tr>
-                        <th>Carpeta</th>
-                        <th>Causa Penal</th>
-                        <th>Municipio</th>
-                        <th>Distrito</th>
-                        <th>Testigo</th>
+                        <th>Folio</th>
+                        <td>Agente M.P que la otorgo</td>
+                        <th>Fecha de Emision
+                            <br>  de la Medida</th>
+                        <th>Delito</th>
+                        <th>Nombre de la Victima</th>
+                        <th>Duracion</th>
+                        <th>No. Oficio</th>
+                       
                         <th>Acciones </th>
-                      
+
 
 
 
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($medidas_de_proteccion  as $medida)
+                    @foreach($medidas_de_proteccion as $medida)
                     <tr>
-                    <td>{{$medida->carpeta}}</td>
-                    <td>{{$medida->causa_penal}}</td>
-                    <td>{{$medida->municipio->nombre}}</td>
+                        <td>{{$medida->seguimiento->folio}}</td>
+                        <td>{{$medida->seguimiento->nombre_mp_otorga}}</td>
+                        <td>{{$medida->seguimiento->fecha}}</td>
 
-                    <td>{{$medida->distrito->nombre}}</td>
-                    <td>{{$medida->testigo->nombre}}</td>
-                       
+                        <td> 
+                            
+                            @foreach($medida->delitos as $delito)
+                                {{$delito->nombre}}
+                                <br>
+                            @endforeach
+                        </td>
+                        <td>{{$medida->testigo->nombre}}</td>
+                            
+                        <td>{{$medida->seguimiento->duracion}} dias</td>
+                        <td> {{$medida->seguimiento->numero_oficio}}</td>
+                    
                         <td>
-                   
+
                             <center>
 
-                                <a href="{{route('medidas.proteccion.detalles',$medida->id)}}" type="button" class="btn btn-outline-hover-info btn-elevate btn-icon"><i class="la la-eye"></i></a>
-                      
+                                <a href="{{route('seguimiento.medidas.detalles',$medida->id)}}" type="button"
+                                    class="btn btn-outline-hover-info btn-elevate btn-icon"><i
+                                        class="la la-eye"></i></a>
+
                             </center>
 
                         </td>
 
-                     
+
                     </tr>
                     @endforeach
-                   
-                   
+
+
 
 
 
@@ -121,9 +136,9 @@
 <!--end::Page Scripts -->
 
 <script>
-    $(document).ready(function(){
-          $('[data-toggle="tooltip"]').tooltip();   
-        });
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
 </script>
 @endpush
 @stop

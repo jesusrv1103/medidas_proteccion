@@ -23,8 +23,17 @@ Route::get('medidasproteccion', 'MedidasDeProteccion\MedidaDeProteccionControlle
 
 Route::get('medidasproteccion/{id}/detalles', 'MedidasDeProteccion\MedidaDeProteccionController@show')->name('medidas.proteccion.detalles');
 
-Route::get('medidasproteccion/seguimiento', 'MedidasDeProteccion\MedidaDeProteccionController@seguimiento')->name('medidas.proteccion.seguimiento');
+Route::get('medidasproteccion/{id}/seguimiento', 'MedidasDeProteccion\MedidaDeProteccionController@seguimiento')->name('medidas.proteccion.seguimiento');
 
 
 Route::post('medidasdeproteccion/{id}/evidencia', 'MedidasDeProteccion\EvidenciaMedidaProteccionController@store')->name('medidasdeproteccion.evidencias.store');
 
+
+
+Route::post('seguimiento/medidas/proteccion', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@store')->name('seguimiento.proteccion.store');
+
+
+
+Route::get('seguimiento/medidas/proteccion', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@index')->name('seguimiento.proteccion.index');
+
+Route::get('seguimiento/medidas/{id}/detalles', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@show')->name('seguimiento.medidas.detalles');
