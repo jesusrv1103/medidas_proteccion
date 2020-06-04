@@ -2,7 +2,7 @@
 <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed " style="background-color:#9D9D9C !important;">
     <div class="kt-header-mobile__logo">
         <a href="#" style="color:white !important;">
-            <h5>PREDENUNCIAS FGJEZ</h5>
+            <h5>MEDIDAS DE PROTECCION FGJEZ</h5>
         </a>
     </div>
     <div class="kt-header-mobile__toolbar">
