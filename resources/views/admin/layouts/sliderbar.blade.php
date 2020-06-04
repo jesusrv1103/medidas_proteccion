@@ -5,7 +5,7 @@
         <ul class="kt-menu__nav ">
 
 
-            <li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon 
+            <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('medidas.proteccion.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon 
                             flaticon-layer"></i><span class="kt-menu__link-text">INICIO</span></a></li>
             <li class="kt-menu__section ">
                 <h4 class="kt-menu__section-text">Medidas De Proteccion</h4>

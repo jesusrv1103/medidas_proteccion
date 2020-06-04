@@ -173,23 +173,19 @@ class MedidaDeProteccionController extends Controller
         }
         
        
+        $evidencias = EvidenciaMedidaProteccion::
+        select('imagen')
+        ->where('predenuncia_id', '=', $idMedidaProteccion)
+        ->get();
+        $evidencias = $evidencias;
 
-        Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($medida_proteccion));
+        Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($medida_proteccion,$evidencias));
 
         DB::commit();
 
         return redirect()->back()->with('flash', 
         'Su informacion ha sido recibida, personal de la Fiscalía se pondrá en
          contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');
-
-       // Mail::to('medidas.proteccion@fiscaliazacatecas.gob.mx')->send(new MedidaDeProteccionRecibida($request));
-        
-       
-       /*return redirect()->back()->with('flash', 
-        'Su informacion ha sido recibida, personal de la Fiscalía se pondrá en
-         contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');
-        */
-    
       
     }
 

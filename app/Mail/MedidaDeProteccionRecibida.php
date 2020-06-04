@@ -18,10 +18,15 @@ class MedidaDeProteccionRecibida extends Mailable
      */
 
     public  $medida_proteccion;
+    public  $evidencias ;
 
-    public function __construct($medida_proteccion)
+    public function __construct($medida_proteccion, $evidencias)
     {
         $this->medida_proteccion =$medida_proteccion;
+        $this->evidencias=$evidencias;
+
+        
+
     }
 
     /**
@@ -31,7 +36,17 @@ class MedidaDeProteccionRecibida extends Mailable
      */
     public function build()
     {
-        return $this->view('correos.medida_proteccion');
+
+        $email= $this->view('correos.medida_proteccion');
+        $email->subject('Solicitud, de medida de proteccion Recibida');
+
+        foreach($this->evidencias as $evidencia){
+        
+            $url=storage_path()."/app/".$evidencia['imagen'];
+            $email->attach($url);
+           }
+          
+        return $email;
 
         
     }
