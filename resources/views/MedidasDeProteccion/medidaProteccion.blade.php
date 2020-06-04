@@ -574,7 +574,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-9">
                                                     <div class="kt-radio-inline">
 														<label class="kt-radio">
-															<input type="radio" id="persona_si" name="persona_confianza"> Si
+															<input type="radio" id="persona_si" checked name="persona_confianza"> Si
 															<span></span>
 														</label>
 														<label class="kt-radio">
@@ -1140,12 +1140,24 @@ License: You must have a valid license purchased only from themeforest(the above
 
     $(document).ready(function(){  
   
-  $("#persona_si").click(function() {  
-      if($("#radio").is(':checked')) {  
-          alert("Está activado");  
-      } else {  
-          alert("No está activado");  
-      }  
+        $("#persona_si").click(function() {  
+            if($("#persona_si").is(':checked')) {  
+                $('#nombreConfianza').show(); 
+                $('#telefonoConfianza').show(); 
+                $('#domicilioConfianza').show(); 
+            } 
+        });  
+
+    });  
+
+$(document).ready(function(){  
+  
+  $("#persona_no").click(function() {  
+      if($("#persona_no").is(':checked')) {  
+        $('#nombreConfianza').hide(); 
+        $('#telefonoConfianza').hide(); 
+        $('#domicilioConfianza').hide();
+      } 
   });  
 
 });  
