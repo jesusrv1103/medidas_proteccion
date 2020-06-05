@@ -12,7 +12,13 @@ class GrupoVulnerableTableSeeder extends Seeder
      */
     public function run()
     {
-       GrupoVulnerable::create([
+
+        GrupoVulnerable::create([
+            'nombre' => 'Ninguno',
+        ]);
+
+
+        GrupoVulnerable::create([
             'nombre' => 'Mujeres',
         ]);
 
