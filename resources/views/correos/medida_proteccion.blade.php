@@ -124,11 +124,15 @@
             <td>Correo electrónico: </td>
             <td>{{$medida_proteccion->testigo->correo}}</td>
         </tr>
+        
 
+        @if(isset($medida_proteccion->persona_confianza))
 
         <tr>
             <td>Nombre Persona de confianza: </td>
-            <td>   {{$medida_proteccion->persona_confianza->nombre}}</td>
+            <td>   
+                    
+                {{$medida_proteccion->persona_confianza->nombre}}</td>
         </tr>
 
 
@@ -141,6 +145,7 @@
             <td>Domicilio Persona de confianza: </td>
             <td>  {{$medida_proteccion->persona_confianza->domicilio}}</td>
         </tr>
+        @endif
 
      
         @php

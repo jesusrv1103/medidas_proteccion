@@ -72,17 +72,16 @@
 
                         <div class="row">
                             <div class="form-group  col-sm-6">
-                                <label for="example-date-input">Nombre del Agresor<span
-                                        style="color:red;">*</span></label>
+                                <label for="example-date-input">Nombre del Agresor</span></label>
 
                                 <input class="form-control" name="nombre_agresor" type="text" id="example-date-input"
-                                    required>
+                                    >
 
                             </div>
 
 
                             <div class="form-group  col-sm-6">
-                                <label for="example-date-input">Duracion<span style="color:red;">*</span></label>
+                                <label for="example-date-input">Duracion en dias<span style="color:red;">*</span></label>
 
                                 <input class="form-control" name="duracion" type="number" id="example-date-input"
                                     required>
@@ -166,10 +165,10 @@
 
 
                             <div class="form-group  col-sm-12">
-                                <label for="example-date-input">Incidencias <span style="color:red;">*</span></label>
+                                <label for="example-date-input">Incidencias </label>
 
                                 <input class="form-control" name="incidencias" type="text" id="example-date-input"
-                                    required>
+                                >
 
                             </div>
 
@@ -217,7 +216,7 @@
                                         <span></span>
                                     </label>
                                     <label class="radio">
-                                        <input type="radio" name="antecedente_medida"   value="0"  /> No
+                                        <input type="radio" name="antecedente_medida" checked  value="0"  /> No
                                         <span></span>
                                     </label>
 
@@ -234,7 +233,7 @@
                                         <span></span>
                                     </label>
                                     <label class="radio">
-                                        <input type="radio" name="antecedente_denuncia_medida"  value="0"  /> No
+                                        <input type="radio" name="antecedente_denuncia_medida"  value="0" checked  /> No
                                         <span></span>
                                     </label>
 

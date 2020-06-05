@@ -87,7 +87,7 @@ class SeguimientoMedidaProteccionController extends Controller
     
 
         $medidas_de_proteccion=MedidaDeProteccion::
-        where('aceptada','=',0)
+        where('aceptada','=',1)
         ->where('id','>',1)
         ->get();
 

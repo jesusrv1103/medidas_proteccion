@@ -23,7 +23,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <!--end::Base Path -->
     <meta charset="utf-8" />
-    <title>SISTEMA DE MEDIDAS DE PROTECCION | FGJEZ</title>
+    <title>SISTEMA DE MEDIDAS DE Protección | FGJEZ</title>
     <meta name="description" content="Latest updates and statistic charts">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -185,7 +185,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    Medidas de Proteccion</h1>
+                                    Medidas de Protección</h1>
                             </center>
 
 
@@ -236,7 +236,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="kt-portlet__head">
                                         <div class="kt-portlet__head-label">
                                             <h3 class="kt-portlet__head-title">
-                                                Sistema de Medidas de Proteccion
+                                                Sistema de Medidas de Protección
                                             </h3>
                                         </div>
                                     </div>
@@ -257,7 +257,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="alert-icon"><i
                                                             class="flaticon-avatar kt-font-brand"></i></div>
                                                     <div class="alert-text">
-                                                        <h2>Datos de Medida de Proteccion</h2>
+                                                        <h2>Datos de Medida de Protección</h2>
                                                     </div>
                                                 </div>
                                             </div>
@@ -567,22 +567,23 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="form-group row">
                                                 <label class="col-3 col-form-label">Ingresar datos de persona de
                                                     confianza:</label>
                                                 <div class="col-9">
                                                     <div class="kt-radio-inline">
-														<label class="kt-radio">
-															<input type="radio" id="persona_si" checked name="persona_confianza"> Si
-															<span></span>
-														</label>
-														<label class="kt-radio">
-															<input type="radio"  id="persona_no" name="persona_confianza"> No
-															<span></span>
-														</label>
-														
-													</div>
+                                                        <label class="kt-radio">
+                                                            <input type="radio" id="persona_si" value="1" checked
+                                                                name="persona_confianza"> Si
+                                                            <span></span>
+                                                        </label>
+                                                        <label class="kt-radio">
+                                                            <input type="radio" id="persona_no" value="0"
+                                                                name="persona_confianza"> No
+                                                            <span></span>
+                                                        </label>
+
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -595,11 +596,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </label>
                                                 <div class="col-10">
                                                     <input type="text" class="form-control"
-                                                        name="nombre_persona_confianza" required
+                                                        name="nombre_persona_confianza" 
                                                         onchange="mayus(this);">
                                                     <span class="form-text text-muted">
-                                                        Por favor ingrese Nombre de la víctima, testigo o diversa
-                                                        persona que intervenga en el proceso penal.</span>
+                                                        Por favor Ingrese Nombre de la Persona de Confianza.</span>
                                                 </div>
                                             </div>
 
@@ -615,7 +615,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         </div>
                                                         <input type="text" class="form-control"
                                                             name="telefono_confianza"
-                                                            onkeypress=" return soloNumeros(event);" required>
+                                                            onkeypress="return soloNumeros(event);">
 
                                                     </div>
                                                     <span class="form-text text-muted">Por favor ingrese Teléfono de
@@ -635,7 +635,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </label>
                                                 <div class="col-10">
                                                     <input type="text" class="form-control" name="domicilio_confianza"
-                                                        required onchange="mayus(this);">
+                                                         onchange="mayus(this);">
                                                     <span class="form-text text-muted">
                                                         Por favor ingrese Domicilio de
                                                         otra persona de confianza con quien se pueda establecer
@@ -739,8 +739,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         </div>
 
                                                         <div class="col-md-4 btn-lg">
-                                                            <button type="submit" class="btn btn-success"
-                                                                id="kt_sweetalert_demo_3_3">Enviar Formulario</button>
+                                                            <button type="submit" class="btn btn-success">Enviar
+                                                                Formulario</button>
                                                         </div>
                                                         <div class="col-md-4">
 
