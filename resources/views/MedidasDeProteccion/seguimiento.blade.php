@@ -75,7 +75,7 @@
                                 <label for="example-date-input">Nombre del Agresor</span></label>
 
                                 <input class="form-control" name="nombre_agresor" type="text" id="example-date-input"
-                                    required>
+                                    >
 
                             </div>
 
@@ -168,7 +168,7 @@
                                 <label for="example-date-input">Incidencias </label>
 
                                 <input class="form-control" name="incidencias" type="text" id="example-date-input"
-                                    required>
+                                >
 
                             </div>
 
