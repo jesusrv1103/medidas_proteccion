@@ -390,7 +390,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="col-10">
 
                                                     <input type="text" class="form-control" onchange="mayus(this);"
-                                                        name="solicitante" required>
+                                                        name="solicitante" >
                                                     <span class="form-text text-muted">Por favor ingrese nombre de
                                                         solicitante.</span>
                                                 </div>
@@ -430,7 +430,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <label for="example-number-input" class="col-2 col-form-label">Edad
                                                     <span style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                    <input class="form-control" type="number" required value="42"
+                                                    <input class="form-control" type="number" required value="0"
                                                         name="edad" id="example-number-input">
                                                 </div>
                                             </div>
@@ -535,7 +535,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     class="la la-chain"></i></span>
                                                         </div>
                                                         <input type="text" class="form-control" name="telefono"
-                                                            onkeypress=" return soloNumeros(event);" required>
+                                                            onkeypress=" return soloNumeros(event);" >
 
                                                     </div>
                                                     <span class="form-text text-muted">Por favor ingrese
@@ -1030,7 +1030,7 @@ License: You must have a valid license purchased only from themeforest(the above
     });
 
     $('#kt-select-distrito, #kt_select2_3_validate').select2({
-        placeholder: "Selecciona un Distrito",
+        placeholder: "Seleccione el Distrito",
     });
 
 

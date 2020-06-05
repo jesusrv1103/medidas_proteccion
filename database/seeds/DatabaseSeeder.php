@@ -27,6 +27,8 @@ class DatabaseSeeder extends Seeder
         //$this->call(TestigoTableSeeder::class);
         //$this->call(PersonaDeConfianzaTableSeeder::class);
         $this->call(MedidaDeProteccionTableSeeder::class);
+        $this->call(TipoUsuarioTableSeeder::class);
+        $this->call(AreaUsuarioTableSeeder::class);
 
         
     }

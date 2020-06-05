@@ -37,3 +37,10 @@ Route::post('seguimiento/medidas/proteccion', 'MedidasDeProteccion\SeguimientoMe
 Route::get('seguimiento/medidas/proteccion', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@index')->name('seguimiento.proteccion.index');
 
 Route::get('seguimiento/medidas/{id}/detalles', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@show')->name('seguimiento.medidas.detalles');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

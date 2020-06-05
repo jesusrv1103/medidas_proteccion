@@ -15,8 +15,8 @@ class CreateMedidasDeProteccionTable extends Migration
     {
         Schema::create('medidas_de_proteccion', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("carpeta");
-            $table->string("causa_penal");
+            $table->string("carpeta")->nullable($value = true);;
+            $table->string("causa_penal")->nullable($value = true);;
             $table->BigInteger('municipio_id')->unsigned();
             $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->BigInteger('distrito_id')->unsigned();
@@ -24,7 +24,7 @@ class CreateMedidasDeProteccionTable extends Migration
             $table->string("fiscal");
             $table->date("fecha");
             $table->time("hora");
-            $table->string("solicitante");
+            $table->string("solicitante")->nullable($value = true);;
             $table->boolean('aceptada')->default(0);
             $table->timestamps();
         });
