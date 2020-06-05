@@ -32,7 +32,7 @@
                     flaticon2-send"></i>
                 </span>
                 <h3 class="kt-portlet__head-title">
-                    Medidas de Proteccion Aceptadas
+                    Medidas de Protección Aceptadas
                 </h3>
             </div>
             <div class="kt-portlet__head-toolbar">

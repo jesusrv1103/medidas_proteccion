@@ -19,12 +19,13 @@
 
         <div class="kt-subheader__toolbar">
             <div class="kt-subheader__wrapper">
-                <a href="{{route('medidas.proteccion.seguimiento',$medida_de_proteccion->id)}}" class="btn btn-light-danger font-weight-bold mr-2">
+                <a href="{{route('medidas.proteccion.seguimiento',$medida_de_proteccion->id)}}"
+                    class="btn btn-light-danger font-weight-bold mr-2">
                     <i class="flaticon-edit-1"></i> Dar Seguimiento
                 </a>
-              
 
-                
+
+
             </div>
         </div>
 
@@ -43,11 +44,11 @@
                 <div class="kt-invoice__head">
                     <div class="kt-invoice__container">
                         <div class="kt-invoice__brand">
-                            <h1 class="kt-invoice__title">Medida de Proteccion</h1>
+                            <h1 class="kt-invoice__title">Medida de Protección</h1>
                             <div href="#" class="kt-invoice__logo">
                                 <img src="/assets/logos_fiscalia/original180x90.png" width="200px">
                                 <span class="kt-invoice__desc">
-                                    <span>Medida de proteccion de la carpeta: {{$medida_de_proteccion->carpeta}} </span>
+                                    <span>Medida de protección de la carpeta: {{$medida_de_proteccion->carpeta}} </span>
 
                                 </span>
                             </div>
@@ -233,6 +234,10 @@
 
 
                         <br><br>
+
+                        @if(isset($medida_de_proteccion->persona_confianza))
+                       
+                       
                         <span>
                             <h3>Datos de Persona de Confianza</h3>
                         </span>
@@ -242,7 +247,10 @@
                                 <strong>Nombre: </strong>
                             </span>
                             <span class="kt-widget13__text kt-widget13__text--bold">
+
+
                                 {{$medida_de_proteccion->persona_confianza->nombre}}
+
                             </span>
                         </div>
 
@@ -264,9 +272,11 @@
                                 {{$medida_de_proteccion->persona_confianza->domicilio}}
                             </span>
                         </div>
-
-
                         <br><br>
+                        @endif
+
+
+                        
                         <span>
                             <h3>Datos Generales</h3>
                         </span>
@@ -463,7 +473,7 @@
 
 
 
-               
+
             </div>
         </div>
     </div>

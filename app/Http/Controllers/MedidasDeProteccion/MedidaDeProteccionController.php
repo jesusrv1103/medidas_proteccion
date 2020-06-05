@@ -117,13 +117,18 @@ class MedidaDeProteccionController extends Controller
         $testigo->medida_de_proteccion_id= $idMedidaProteccion;
         $testigo->save();
         $testigoId=$testigo->id;
+        
+        if($request->persona_confianza==1){
+            $persona_confianza= new PersonaDeConfianza;
+            $persona_confianza->nombre=$request->nombre_persona_confianza;
+            $persona_confianza->telefono=$request->telefono_confianza;
+            $persona_confianza->domicilio=$request->domicilio_confianza;
+            $persona_confianza->medida_de_proteccion_id= $idMedidaProteccion;
+            $persona_confianza->save();
 
-        $persona_confianza= new PersonaDeConfianza;
-        $persona_confianza->nombre=$request->nombre_persona_confianza;
-        $persona_confianza->telefono=$request->telefono_confianza;
-        $persona_confianza->domicilio=$request->domicilio_confianza;
-        $persona_confianza->medida_de_proteccion_id= $idMedidaProteccion;
-        $persona_confianza->save();
+        }
+
+        
 
 
 

@@ -18,11 +18,11 @@ class CreateSeguimientoMedidasProteccionTable extends Migration
             $table->string('folio');
             $table->date('fecha');
             $table->string('nombre_mp_otorga');
-            $table->string('nombre_agresor');
+            $table->string('nombre_agresor')->nullable($value = true);;
             $table->integer('duracion');
             $table->date('fecha_notificacion');
             $table->string('numero_oficio');
-            $table->text('incidencias');
+            $table->text('incidencias')->nullable($value = true);;
             $table->BigInteger('medida_de_proteccion_id')->unsigned();
             $table->foreign('medida_de_proteccion_id')->references('id')->on('medidas_de_proteccion');
            
