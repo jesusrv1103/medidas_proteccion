@@ -19,28 +19,40 @@ Route::get('/', 'MedidasDeProteccion\MedidaDeProteccionController@create')->name
 
 Route::post('/', 'MedidasDeProteccion\MedidaDeProteccionController@store')->name('medidas.proteccion.store');
 
-Route::get('medidasproteccion', 'MedidasDeProteccion\MedidaDeProteccionController@index')->name('medidas.proteccion.index');
+Route::get('medidasproteccion', 'MedidasDeProteccion\MedidaDeProteccionController@index')->name('medidas.proteccion.index')->middleware('auth');
 
-Route::get('medidasproteccion/{id}/detalles', 'MedidasDeProteccion\MedidaDeProteccionController@show')->name('medidas.proteccion.detalles');
+Route::get('medidasproteccion/{id}/detalles', 'MedidasDeProteccion\MedidaDeProteccionController@show')->name('medidas.proteccion.detalles')->middleware('auth');
 
-Route::get('medidasproteccion/{id}/seguimiento', 'MedidasDeProteccion\MedidaDeProteccionController@seguimiento')->name('medidas.proteccion.seguimiento');
-
-
-Route::post('medidasdeproteccion/{id}/evidencia', 'MedidasDeProteccion\EvidenciaMedidaProteccionController@store')->name('medidasdeproteccion.evidencias.store');
+Route::get('medidasproteccion/{id}/seguimiento', 'MedidasDeProteccion\MedidaDeProteccionController@seguimiento')->name('medidas.proteccion.seguimiento')->middleware('auth');
 
 
-
-Route::post('seguimiento/medidas/proteccion', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@store')->name('seguimiento.proteccion.store');
+Route::post('medidasdeproteccion/{id}/evidencia', 'MedidasDeProteccion\EvidenciaMedidaProteccionController@store')->name('medidasdeproteccion.evidencias.store')->middleware('auth');
 
 
 
-Route::get('seguimiento/medidas/proteccion', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@index')->name('seguimiento.proteccion.index');
+Route::post('seguimiento/medidas/proteccion', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@store')->name('seguimiento.proteccion.store')->middleware('auth');
 
-Route::get('seguimiento/medidas/{id}/detalles', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@show')->name('seguimiento.medidas.detalles');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::get('seguimiento/medidas/proteccion', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@index')->name('seguimiento.proteccion.index')->middleware('auth');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('seguimiento/medidas/{id}/detalles', 'MedidasDeProteccion\SeguimientoMedidaProteccionController@show')->name('seguimiento.medidas.detalles')->middleware('auth');
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+
+
+
+
+Route::post('logout', 'Auth\LoginController@logout ')->name('logout')->middleware('auth');;
+
+
+Route::post('register', 'Auth\RegisterController@register')->middleware('auth');;
+
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('auth');
+       
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

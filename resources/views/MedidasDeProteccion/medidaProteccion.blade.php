@@ -430,7 +430,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <label for="example-number-input" class="col-2 col-form-label">Edad
                                                     <span style="color:red;">*</span></label>
                                                 <div class="col-10">
-                                                    <input class="form-control" type="number" required value="0"
+                                                    <input class="form-control" type="number" required min="0"  max="100" value="0"
                                                         name="edad" id="example-number-input">
                                                 </div>
                                             </div>

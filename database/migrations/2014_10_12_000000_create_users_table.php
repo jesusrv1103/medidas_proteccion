@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->BigInteger('tipo_usuario_id')->unsigned();
             $table->foreign('tipo_usuario_id')->references('id')->on('tipo_usuarios');
+            $table->BigInteger('area_id')->unsigned();
+            $table->foreign('area_id')->references('id')->on('area_usuarios');
             $table->boolean('activo')->default(1);
             $table->rememberToken();
             $table->timestamps();
