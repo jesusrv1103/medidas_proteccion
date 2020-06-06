@@ -42,6 +42,7 @@ Route::get('seguimiento/medidas/{id}/detalles', 'MedidasDeProteccion\Seguimiento
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
 
 
 
@@ -49,9 +50,11 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('logout', 'Auth\LoginController@logout ')->name('logout')->middleware('auth');;
 
 
-Route::post('register', 'Auth\RegisterController@register')->middleware('auth');;
+
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('auth');
+
+Route::post('register', 'Auth\RegisterController@register')->name('register_user')->middleware('auth');
        
 //Auth::routes();
 

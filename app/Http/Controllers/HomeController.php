@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\MedidasDeProteccion\MedidaDeProteccion;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $medidas_de_proteccion=MedidaDeProteccion::
+        where('aceptada','=',0)
+        ->where('id','>',1)
+        ->get();
+        return view('MedidasDeProteccion.index',
+        compact('medidas_de_proteccion'));  
     }
 }

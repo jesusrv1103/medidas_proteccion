@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\AreaUsuario;
+use App\TipoUsuario;
 
 class User extends Authenticatable
 {
@@ -36,4 +38,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function area()
+    {
+        return $this->belongsTo(AreaUsuario::class,'area_id');
+    }
+
+
+    public function tipo_usuario()
+    {
+        return $this->belongsTo(TipoUsuario::class,'tipo_usuario_id');
+    }
 }
