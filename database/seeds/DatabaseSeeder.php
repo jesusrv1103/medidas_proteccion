@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MedidaDeProteccionTableSeeder::class);
         $this->call(TipoUsuarioTableSeeder::class);
         $this->call(AreaUsuarioTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
 
         
     }

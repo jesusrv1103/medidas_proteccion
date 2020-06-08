@@ -20,7 +20,7 @@ class RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
-    */
+     */
 
     use RegistersUsers;
 
@@ -77,7 +77,10 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function index(){
-        
+    public function index()
+    {
+        $users=User::where('activo','=',1)->get();
+
+        return view('auth.index',compact('users'));
     }
 }

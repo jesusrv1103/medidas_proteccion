@@ -55,6 +55,8 @@ Route::post('logout', 'Auth\LoginController@logout ')->name('logout')->middlewar
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('auth');
 
 Route::post('register', 'Auth\RegisterController@register')->name('register_user')->middleware('auth');
+
+Route::get('users', 'Auth\RegisterController@index')->name('users.list')->middleware('auth');
        
 //Auth::routes();
 
