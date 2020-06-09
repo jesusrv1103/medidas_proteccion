@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         User::create([
             'name' => 'Administrador',
             'user_name' => 'admin',
-            'email' => 'jramirezv@fiscaliazacatecas.gob.mx',
+            'email' => 'admin@fiscaliazacatecas.gob.mx',
             'password' => Hash::make('SDGY669H0ME7'),
             'tipo_usuario_id' => 1,
             'area_id'   => 1,
