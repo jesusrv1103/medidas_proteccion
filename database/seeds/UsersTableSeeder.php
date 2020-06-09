@@ -13,8 +13,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'JESUS  RAMIREZ VARGAS',
-            'user_name' => 'jramirezv',
+            'name' => 'Administrador',
+            'user_name' => 'admin',
             'email' => 'jramirezv@fiscaliazacatecas.gob.mx',
             'password' => Hash::make('SDGY669H0ME7'),
             'tipo_usuario_id' => 1,
