@@ -25,7 +25,7 @@
 
 
 
-            @if (auth()->user()->tipo_usuario->nombre)
+         
             <li class="kt-menu__section ">
                 <h4 class="kt-menu__section-text">USUARIOS</h4>
                 <i class="kt-menu__section-icon flaticon-more-v2"></i>
@@ -33,7 +33,7 @@
 
             <li class="kt-menu__item " aria-haspopup="true"><a href="{{route('users.list')}}" class="kt-menu__link "><i class="kt-menu__link-icon 
                     flaticon-users"></i><span class="kt-menu__link-text">Usuarios</span></a></li>
-            @endif
+           
             
 
 

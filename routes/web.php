@@ -58,6 +58,6 @@ Route::post('register', 'Auth\RegisterController@register')->name('register_user
 
 Route::get('users', 'Auth\RegisterController@index')->name('users.list')->middleware('auth');
        
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
