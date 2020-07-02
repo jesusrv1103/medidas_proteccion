@@ -506,7 +506,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Grupos Vulnerables:
+                                                <label class="col-2 col-form-label">Grupos en Situación de Vulnerabilidad:
                                                     <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <select class="form-control kt-select2" id="kt-grupo-vulnerable"

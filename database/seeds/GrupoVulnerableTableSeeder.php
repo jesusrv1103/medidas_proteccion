@@ -27,7 +27,7 @@ class GrupoVulnerableTableSeeder extends Seeder
         ]);
 
        GrupoVulnerable::create([
-            'nombre' => 'Comunidad LGBTTTIQ',
+            'nombre' => 'Comunidad LGBTTTI',
         ]);
 
        GrupoVulnerable::create([
@@ -40,6 +40,14 @@ class GrupoVulnerableTableSeeder extends Seeder
 
        GrupoVulnerable::create([
             'nombre' => 'Personas con Discapacidad',
+        ]);
+
+        GrupoVulnerable::create([
+            'nombre' => 'Personas con Problema de Salud',
+        ]);
+
+        GrupoVulnerable::create([
+            'nombre' => 'Periodistas y Defensores Civiles',
         ]);
 
     }
